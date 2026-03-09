@@ -19,7 +19,9 @@
 </div>
 
 ## Descrição do Problema
-
+A Edenred Brasil está conduzindo uma estratégia de digitalização de suas operações, migrando parte de seus produtos de meios físicos (cartões plásticos) para soluções exclusivamente digitais. Essa transformação está alinhada às tendências globais de digitalização, eficiência operacional e sustentabilidade, além de acompanhar mudanças no comportamento dos consumidores e nas dinâmicas do mundo do trabalho.
+No entanto, durante esse processo de migração, surgem questionamentos por parte dos clientes quanto à adaptação às novas soluções digitais. Parte dessa resistência está relacionada a fatores culturais, operacionais e de confiança, mas também à falta de clareza sobre os benefícios concretos da mudança, especialmente sob a ótica ambiental e de sustentabilidade. 
+A Edenred enfrenta um desafio estratégico de transformação digital em que a resistência dos clientes à migração de cartões físicos para soluções digitais pode comprometer retenção e crescimento. Embora exista um potencial benefício ambiental significativo na digitalização, a ausência de mensuração clara e comparativa desses impactos dificulta a comunicação de valor. O problema central não é apenas tecnológico, mas comunicacional e estratégico, uma vez que, apesar da percepção intuitiva de que soluções digitais são mais sustentáveis, não há atualmente uma ferramenta estruturada que quantifique, de forma comparativa e objetiva, o impacto ambiental das transações físicas versus digitais dentro do contexto da Edenred.
 
 ## Objetivos
 
