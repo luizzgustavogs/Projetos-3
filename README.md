@@ -81,12 +81,6 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
     <td>lggs@cesar.school</td>
   </tr>
   <tr>
-    <td>Maria Clara</td>
-    <td>Desenvolvedora Back-End</td>
-    <td><a href="https://www.linkedin.com/in/claratargino/" target="_blank">LinkedIn</a></td>
-    <td>mcat@cesar.school</td>
-  </tr>
-  <tr>
     <td>Nádia Bordoni</td>
     <td>Designer</td>
     <td><a href="https://www.linkedin.com/in/nadia-bordoni-a158a1136/" target="_blank">LinkedIn</a></td>
