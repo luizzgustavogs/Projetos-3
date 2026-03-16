@@ -4,16 +4,24 @@
 
 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
 
-<a href="">
+<a href="https://sites.google.com/d/1QC_0PZsDR7u_jQ4WzQiHtvbm-t_pX3-A/p/1tc1EB90UIzSXgyXSQ5CcjT3fdm-uKuS8/edit?pli=1">
   <img src="https://img.shields.io/badge/Google%20Sites-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Sites"/>
+</a>
+
+<a href="https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf">
+  <img src="https://img.shields.io/badge/Histórias-483D8B?style=for-the-badge&logo=google&logoColor=white" alt="Histórias Usuário"/>
 </a>
 
 <a href="">
   <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello&logoColor=white" alt="Trello"/>
 </a>
 
-<a href="">
+<a href="https://www.figma.com/design/pG6K1wrGpiHmdywLgu3kWZ/Eden?node-id=0-1&t=SrXtRCToj5QA2Wqt-1">
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo"/>
+</a>
+
+<a href="https://youtu.be/hxJJr5404yE?si=1XCPzu75DOrll5fK">
+    <img src="https://img.shields.io/badge/Screencast Entrega 1-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
 </div>
@@ -80,6 +88,7 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
     <td><a href="https://www.linkedin.com/in/luiz-gustavo-878620192" target="_blank">LinkedIn</a></td>
     <td>lggs@cesar.school</td>
   </tr>
+  
   <tr>
     <td>Nádia Bordoni</td>
     <td>Designer</td>
