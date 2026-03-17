@@ -95,5 +95,12 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
     <td><a href="https://www.linkedin.com/in/nadia-bordoni-a158a1136/" target="_blank">LinkedIn</a></td>
     <td>nfb@cesar.school</td>
   </tr>
+
+  <tr>
+    <td>Eduardo Henrique</td>
+    <td>Desenvolvedor Back-end</td>
+    <td><a href="https://www.linkedin.com/in/eduardohasantos/" target="_blank">LinkedIn</a></td>
+    <td>ehas@cesar.school</td>
+  </tr>
 </table>
 </div>
