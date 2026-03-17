@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo"/>
 </a>
 
-<a href="https://youtu.be/hxJJr5404yE?si=1XCPzu75DOrll5fK">
+<a href="https://www.youtube.com/watch?v=T7A8ct2o29I">
     <img src="https://img.shields.io/badge/Screencast Entrega 1-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
@@ -52,6 +52,10 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
     <th>LinkedIn</th>
     <th>Email</th>
   </tr>
+      <td>Eduardo Henrique</td>
+    <td>Desenvolvedor Back-end</td>
+    <td><a href="https://www.linkedin.com/in/eduardohasantos/" target="_blank">LinkedIn</a></td>
+    <td>ehas@cesar.school</td>
   <tr>
     <td>Fábio Henrique</td>
     <td>Desenvolvedor Front-End</td>
@@ -96,11 +100,5 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
     <td>nfb@cesar.school</td>
   </tr>
 
-  <tr>
-    <td>Eduardo Henrique</td>
-    <td>Desenvolvedor Back-end</td>
-    <td><a href="https://www.linkedin.com/in/eduardohasantos/" target="_blank">LinkedIn</a></td>
-    <td>ehas@cesar.school</td>
-  </tr>
 </table>
 </div>
