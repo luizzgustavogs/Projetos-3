@@ -1,0 +1,268 @@
+.home-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 28px;
+    z-index: 20;
+}
+
+.brand {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+.hero {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 860px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 120px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+}
+
+.title {
+    max-width: 780px;
+    margin-bottom: 22px;
+    font-size: clamp(2.4rem, 5vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    color: var(--text);
+}
+
+.title span {
+    color: var(--green-dark);
+}
+
+.description {
+    max-width: 700px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.actions {
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.96;
+}
+
+.btn-primary {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+
+.bg-art {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* topo direito */
+.bg-art-top {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 270px;
+    overflow: hidden;
+}
+
+.top-dark {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -86px;
+    background: var(--green-dark);
+}
+
+.top-medium {
+    width: 240px;
+    height: 240px;
+    top: -12px;
+    right: -104px;
+    background: var(--green-medium);
+}
+
+.top-light {
+    width: 170px;
+    height: 170px;
+    top: 47px;
+    right: -78px;
+    background: rgba(18, 175, 25, 0.42);
+}
+
+/* inferior esquerdo */
+.bg-art-bottom {
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    height: 390px;
+    overflow: hidden;
+}
+
+.bottom-back {
+    width: 240px;
+    height: 240px;
+    left: -105px;
+    top: 40px;
+    background: var(--green-medium);
+}
+
+.bottom-middle {
+    width: 245px;
+    height: 245px;
+    left: -180px;
+    top: 118px;
+    background: var(--green-dark);
+}
+
+.bottom-front {
+    width: 235px;
+    height: 235px;
+    left: -42px;
+    bottom: -95px;
+    background: var(--green-light);
+}
+
+.bottom-detail {
+    width: 135px;
+    height: 135px;
+    left: -18px;
+    bottom: -8px;
+    background: rgba(10, 150, 18, 0.38);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+    .topbar {
+        padding: 18px 18px;
+    }
+
+    .brand {
+        font-size: 2.1rem;
+    }
+
+    .hero {
+        padding: 105px 22px 30px;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .bg-art-top {
+        width: 240px;
+        height: 180px;
+    }
+
+    .top-dark {
+        width: 240px;
+        height: 240px;
+        top: -78px;
+        right: -64px;
+    }
+
+    .top-medium {
+        width: 160px;
+        height: 160px;
+        top: -2px;
+        right: -68px;
+    }
+
+    .top-light {
+        width: 112px;
+        height: 112px;
+        top: 34px;
+        right: -52px;
+    }
+
+    .bg-art-bottom {
+        width: 145px;
+        height: 260px;
+    }
+
+    .bottom-back {
+        width: 160px;
+        height: 160px;
+        left: -72px;
+        top: 34px;
+    }
+
+    .bottom-middle {
+        width: 170px;
+        height: 170px;
+        left: -118px;
+        top: 94px;
+    }
+
+    .bottom-front {
+        width: 165px;
+        height: 165px;
+        left: -24px;
+        bottom: -70px;
+    }
+
+    .bottom-detail {
+        width: 90px;
+        height: 90px;
+        left: -10px;
+        bottom: -3px;
+    }
+}
