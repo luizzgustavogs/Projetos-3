@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto Atual - Edenred</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/impacto.css">
+</head>
+<body>
+<main class="impact-page">
+    <header class="topbar">
+        <a href="/" class="brand">Eden</a> 
+    </header>
+
+    <section class="form-section">
+        <div class="form-header">
+            <h1 class="title">Impacto ambiental <span>atual</span></h1>
+            <p class="subtitle">Preencha os dados abaixo para ver o impacto ambiental da sua empresa hoje</p>
+        </div>
+
+        <form class="impact-form" id="formImpacto">
+            <fieldset class="form-group">
+                <legend class="group-title">Dados da sua empresa</legend>
+                <div class="input-row">
+                    <div class="input-box">
+                        <label for="nomeEmpresa">Nome da sua empresa</label>
+                        <input type="text" id="nomeEmpresa" placeholder="Eden Inc.">
+                    </div>
+                    <div class="input-box">
+                        <label for="cnpj">CNPJ</label>
+                        <input type="text" id="cnpj" placeholder="00.000.000/0000-00">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend class="group-title">Dados dos Benefícios</legend>
+                
+                <div class="control-box">
+                    <label for="colaboradores">Quantos colaboradores recebem benefício?</label>
+                    <div class="slider-container">
+                        <span>0</span>
+                        <input type="range" id="colaboradores" min="0" max="10000" value="0">
+                        <span id="valorColaboradores">0</span>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <label>Selecione os benefícios dos colaboradores</label>
+                    <div class="pills-container">
+                        <button type="button" class="pill">VALE ALIMENTAÇÃO</button>
+                        <button type="button" class="pill">VALE REFEIÇÃO</button>
+                        <button type="button" class="pill">VALE TRANSPORTE</button>
+                        <button type="button" class="pill-add">+</button>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <label for="porcentagemDigitais">Qual a porcentagem de benefícios digitais hoje?</label>
+                    <div class="slider-container">
+                        <span>0</span>
+                        <input type="range" id="porcentagemDigitais" min="0" max="100" value="0">
+                        <span id="valorPorcentagem">0%</span>
+                    </div>
+                </div>
+
+                <div id="mensagemAlerta" class="mensagem-alerta"></div>
+
+                <div class="actions" style="margin-top: 32px; text-align: center;">
+                    <button type="submit" class="btn btn-primary">Salvar Dados</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+    <div class="bg-art bg-art-top" aria-hidden="true">
+        <div class="bg-circle top-dark"></div>
+        <div class="bg-circle top-medium"></div>
+        <div class="bg-circle top-light"></div>
+    </div>
+
+    <div class="bg-art bg-art-bottom" aria-hidden="true">
+        <div class="bg-circle bottom-back"></div>
+        <div class="bg-circle bottom-middle"></div>
+        <div class="bg-circle bottom-front"></div>
+        <div class="bg-circle bottom-detail"></div>
+    </div>
+</main>
+
+<script>
+    //Atualizar números dos sliders
+    const sliderColab = document.getElementById('colaboradores');
+    const valorColab = document.getElementById('valorColaboradores');
+    sliderColab.addEventListener('input', (e) => valorColab.textContent = e.target.value);
+
+    const sliderPorcentagem = document.getElementById('porcentagemDigitais');
+    const valorPorcent = document.getElementById('valorPorcentagem');
+    sliderPorcentagem.addEventListener('input', (e) => valorPorcent.textContent = e.target.value + '%');
+
+    //Efeito de selecionar os botões de benefícios
+    const pills = document.querySelectorAll('.pill');
+    pills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            this.classList.toggle('selecionada');
+        });
+    });
+
+    //Validações e salvar os dados
+    const formImpacto = document.getElementById('formImpacto');
+    formImpacto.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const numColaboradores = sliderColab.value;
+        const percentualDigital = sliderPorcentagem.value;
+        const divMensagem = document.getElementById('mensagemAlerta');
+
+        const colabValor = Number(numColaboradores);
+        const percentValor = Number(percentualDigital);
+
+        //Valida as regras do card: numéricos, maiores que zero e vazios
+        if (
+            numColaboradores === "" || percentualDigital === "" || 
+            isNaN(colabValor) || isNaN(percentValor) ||            
+            colabValor <= 0 || percentValor <= 0                   
+        ) {
+            divMensagem.textContent = "Valores inválidos. Tente novamente.";
+            divMensagem.className = "mensagem-alerta erro";
+            return; 
+        }
+
+        const dadosSimulacao = {
+            colaboradores: colabValor,
+            percentualDigital: percentValor
+        };
+
+        //Salva os dados no navegador
+        localStorage.setItem('dadosEdenred', JSON.stringify(dadosSimulacao));
+
+        divMensagem.textContent = "Registro realizado com sucesso.";
+        divMensagem.className = "mensagem-alerta sucesso";
+    });
+</script>
+</body>
+</html>

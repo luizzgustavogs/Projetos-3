@@ -10,4 +10,9 @@ public class PageController {
     public String home() {
         return "home";
     }
+
+    @GetMapping("/impacto")
+    public String impacto() {
+        return "impacto";
+    }
 }

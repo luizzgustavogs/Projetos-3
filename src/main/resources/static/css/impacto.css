@@ -1,0 +1,286 @@
+/* Configuração da página e posição do header idênticas à Home */
+.impact-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 28px;
+    z-index: 20;
+}
+
+.brand {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+/* =========================
+   ESTILOS DO FORMULÁRIO
+========================= */
+.form-section {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 120px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header .title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.form-header .subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.impact-form fieldset {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.group-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+/* Campos de Input de Texto */
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+}
+
+.input-box label, 
+.control-box label {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.input-box input {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    color: var(--text);
+}
+
+.input-box input:focus {
+    border-color: var(--green-dark);
+}
+
+/* Sliders */
+.control-box {
+    margin-bottom: 24px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.slider-container span {
+    font-size: 0.85rem;
+    color: var(--muted);
+    min-width: 45px; /* Evita que o texto pule quando o número cresce */
+}
+
+.slider-container input[type="range"] {
+    flex: 1;
+    accent-color: var(--green-dark);
+}
+
+/* Botões de Benefícios (Pills) */
+.pills-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pill:hover, .pill:focus {
+    border-color: var(--green-dark);
+    color: var(--green-dark);
+}
+
+/* ADICIONADO: Estilo para quando a pílula for selecionada */
+.pill.selecionada {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+    color: white;
+}
+
+.pill-add {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--green-dark);
+    color: var(--white);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+
+.bg-art {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* topo direito */
+.bg-art-top {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 270px;
+    overflow: hidden;
+}
+
+.top-dark {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -86px;
+    background: var(--green-dark);
+}
+
+.top-medium {
+    width: 240px;
+    height: 240px;
+    top: -12px;
+    right: -104px;
+    background: var(--green-medium);
+}
+
+.top-light {
+    width: 170px;
+    height: 170px;
+    top: 47px;
+    right: -78px;
+    background: rgba(18, 175, 25, 0.42);
+}
+
+/* inferior esquerdo */
+.bg-art-bottom {
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    height: 390px;
+    overflow: hidden;
+}
+
+.bottom-back {
+    width: 240px;
+    height: 240px;
+    left: -105px;
+    top: 40px;
+    background: var(--green-medium);
+}
+
+.bottom-middle {
+    width: 245px;
+    height: 245px;
+    left: -180px;
+    top: 118px;
+    background: var(--green-dark);
+}
+
+.bottom-front {
+    width: 235px;
+    height: 235px;
+    left: -42px;
+    bottom: -95px;
+    background: var(--green-light);
+}
+
+.bottom-detail {
+    width: 135px;
+    height: 135px;
+    left: -18px;
+    bottom: -8px;
+    background: rgba(10, 150, 18, 0.38);
+}
+
+/* =========================
+   ADICIONADO: MENSAGENS DE ALERTA
+========================= */
+.mensagem-alerta {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    display: none; 
+}
+
+.mensagem-alerta.erro {
+    display: block;
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.mensagem-alerta.sucesso {
+    display: block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
