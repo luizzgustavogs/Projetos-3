@@ -41,6 +41,74 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 - Ampliar a presença digital da empresa e modernizar os processos.
 - Posicionar a Edenred como referência em soluções digitais de benefícios e pagamentos.
 
+## Entregas
+
+<details> 
+  <summary><strong>Entrega 1 🚀</strong></summary>
+
+  <br>
+
+  **Histórias:**  
+  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
+  
+  **Figma:**  
+  https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
+
+  **Screencast:**  
+  https://www.youtube.com/watch?v=T7A8ct2o29I
+
+</details>
+
+---
+
+<details> 
+  <summary><strong>Entrega 2 🚀</strong></summary>
+
+  <br>
+
+  **Status:**  
+  As seguintes histórias foram implementadas:
+   1. Cenário de uso dos cartões  
+   2. Visualizar emissão de carbono  
+
+  **Screencast:**  
+  [https://www.youtube.com/watch?v=T7A8ct2o29I](https://youtu.be/YHZzzunshrs)
+
+  **Issues/Bugs:**
+
+  <img width="1352" height="692" alt="image" src="https://github.com/user-attachments/assets/d9a47d49-2d05-4258-a3c6-654c23a8277b" />
+
+As issues identificadas estão diretamente relacionadas às histórias implementadas, contribuindo principalmente para a melhoria da confiabilidade, usabilidade e robustez do sistema. De forma geral, elas tratam da validação e formatação correta dos dados inseridos, da precisão nos cálculos de emissão de carbono, da consistência na recuperação de informações e do tratamento adequado de erros. Além disso, abordam aspectos importantes de experiência do usuário, como acessibilidade das mensagens, manutenção de estado após falhas e apresentação de estados vazios, garantindo uma interação mais clara e eficiente.
+
+  **Foto das Histórias**
+  <img width="1855" height="917" alt="image" src="https://github.com/user-attachments/assets/a2991c6b-0833-4afa-9ed4-cff1493d5a12" />
+
+  <img width="1854" height="917" alt="Captura_de_tela_2026-04-05_223913" src="https://github.com/user-attachments/assets/4f5f2639-2247-4a68-b9d8-325849c51cd8" />
+
+  
+
+</details>
+
+---
+
+<details> 
+  <summary><strong>Entrega 3 🚀</strong></summary>
+
+  <br>
+
+</details>
+
+---
+
+<details> 
+  <summary><strong>Entrega 4 🚀</strong></summary>
+
+  <br>
+
+</details>
+
+---
+
 ## Equipe
 
 <div align="center">
