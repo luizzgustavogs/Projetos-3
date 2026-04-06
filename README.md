@@ -45,9 +45,11 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 
 <details> 
   <summary><strong> Entrega 1 🚀 </strong></summary> 
+
 Historias ->  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
-Figma -> https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
   
+Figma -> https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
+
 ScreenCast -> https://www.youtube.com/watch?v=T7A8ct2o29I</details>
 <details> 
   <summary><strong> Entrega 2 🚀 </strong></summary>
