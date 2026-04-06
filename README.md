@@ -72,7 +72,7 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
    2. Visualizar emissão de carbono  
 
   **Screencast:**  
-  https://www.youtube.com/watch?v=T7A8ct2o29I
+  [https://www.youtube.com/watch?v=T7A8ct2o29I](https://youtu.be/YHZzzunshrs)
 
   **Issues/Bugs:**
 
