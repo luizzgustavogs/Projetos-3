@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,38 @@
 
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/impacto.css">
+
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #009A3F;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 154, 63, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #007A33;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 154, 63, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 <main class="impact-page">
@@ -24,17 +56,17 @@
             <p class="subtitle">Preencha os dados abaixo para ver o impacto ambiental da sua empresa hoje</p>
         </div>
 
-        <form class="impact-form" id="formImpacto">
+        <form class="impact-form" action="/calcular-emissoes" method="POST">
             <fieldset class="form-group">
                 <legend class="group-title">Dados da sua empresa</legend>
                 <div class="input-row">
                     <div class="input-box">
                         <label for="nomeEmpresa">Nome da sua empresa</label>
-                        <input type="text" id="nomeEmpresa" placeholder="Eden Inc.">
+                        <input type="text" id="nomeEmpresa" name="nomeEmpresa" placeholder="Eden Inc.">
                     </div>
                     <div class="input-box">
                         <label for="cnpj">CNPJ</label>
-                        <input type="text" id="cnpj" placeholder="00.000.000/0000-00">
+                        <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
                     </div>
                 </div>
             </fieldset>
@@ -46,7 +78,7 @@
                     <label for="colaboradores">Quantos colaboradores recebem benefício?</label>
                     <div class="slider-container">
                         <span>0</span>
-                        <input type="range" id="colaboradores" min="0" max="10000" value="0">
+                        <input type="range" id="colaboradores" name="colaboradores" min="0" max="10000" value="0">
                         <span id="valorColaboradores">0</span>
                     </div>
                 </div>
@@ -65,15 +97,15 @@
                     <label for="porcentagemDigitais">Qual a porcentagem de benefícios digitais hoje?</label>
                     <div class="slider-container">
                         <span>0</span>
-                        <input type="range" id="porcentagemDigitais" min="0" max="100" value="0">
+                        <input type="range" id="porcentagemDigitais" name="porcentagemDigitais" min="0" max="100" value="0">
                         <span id="valorPorcentagem">0%</span>
                     </div>
                 </div>
 
-                <div id="mensagemAlerta" class="mensagem-alerta"></div>
+                <div th:if="${mensagemErro}" class="mensagem-alerta erro" th:text="${mensagemErro}" style="display: block;"></div>
 
                 <div class="actions" style="margin-top: 32px; text-align: center;">
-                    <button type="submit" class="btn btn-primary">Salvar Dados</button>
+                    <button type="submit" class="btn btn-primary">Calcular Emissões</button>
                 </div>
             </fieldset>
         </form>
@@ -94,7 +126,7 @@
 </main>
 
 <script>
-    //Atualizar números dos sliders
+    // Atualizar números dos sliders
     const sliderColab = document.getElementById('colaboradores');
     const valorColab = document.getElementById('valorColaboradores');
     sliderColab.addEventListener('input', (e) => valorColab.textContent = e.target.value);
@@ -103,47 +135,12 @@
     const valorPorcent = document.getElementById('valorPorcentagem');
     sliderPorcentagem.addEventListener('input', (e) => valorPorcent.textContent = e.target.value + '%');
 
-    //Efeito de selecionar os botões de benefícios
+    // Efeito de selecionar os botões de benefícios
     const pills = document.querySelectorAll('.pill');
     pills.forEach(pill => {
         pill.addEventListener('click', function() {
             this.classList.toggle('selecionada');
         });
-    });
-
-    //Validações e salvar os dados
-    const formImpacto = document.getElementById('formImpacto');
-    formImpacto.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-
-        const numColaboradores = sliderColab.value;
-        const percentualDigital = sliderPorcentagem.value;
-        const divMensagem = document.getElementById('mensagemAlerta');
-
-        const colabValor = Number(numColaboradores);
-        const percentValor = Number(percentualDigital);
-
-        //Valida as regras do card: numéricos, maiores que zero e vazios
-        if (
-            numColaboradores === "" || percentualDigital === "" || 
-            isNaN(colabValor) || isNaN(percentValor) ||            
-            colabValor <= 0 || percentValor <= 0                   
-        ) {
-            divMensagem.textContent = "Valores inválidos. Tente novamente.";
-            divMensagem.className = "mensagem-alerta erro";
-            return; 
-        }
-
-        const dadosSimulacao = {
-            colaboradores: colabValor,
-            percentualDigital: percentValor
-        };
-
-        //Salva os dados no navegador
-        localStorage.setItem('dadosEdenred', JSON.stringify(dadosSimulacao));
-
-        divMensagem.textContent = "Registro realizado com sucesso.";
-        divMensagem.className = "mensagem-alerta sucesso";
     });
 </script>
 </body>
