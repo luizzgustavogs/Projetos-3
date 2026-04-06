@@ -44,26 +44,57 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 ## Entregas
 
 <details> 
-  <summary><strong> Entrega 1 🚀 </strong></summary> 
+  <summary><strong>Entrega 1 🚀</strong></summary>
 
-Historias ->  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
+  <br>
+
+  **Histórias:**  
+  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
   
-Figma -> https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
+  **Figma:**  
+  https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
 
-ScreenCast -> https://www.youtube.com/watch?v=T7A8ct2o29I</details>
-<details> 
-  <summary><strong> Entrega 2 🚀 </strong></summary>
+  **Screencast:**  
+  https://www.youtube.com/watch?v=T7A8ct2o29I
 
-Historias 1 e 2 foram implementadas -> </details>
-
-<details> 
-  <summary><strong> Entrega 3 🚀 </strong></summary> 
 </details>
 
+---
+
 <details> 
-  <summary><strong> Entrega 4 🚀 </strong></summary> 
+  <summary><strong>Entrega 2 🚀</strong></summary>
+
+  <br>
+
+  **Status:**  
+  Histórias 1 e 2 foram implementadas
+
+<img width="1855" height="917" alt="image" src="https://github.com/user-attachments/assets/a2991c6b-0833-4afa-9ed4-cff1493d5a12" />
+
+
+<img width="1854" height="917" alt="Captura_de_tela_2026-04-05_223913" src="https://github.com/user-attachments/assets/4f5f2639-2247-4a68-b9d8-325849c51cd8" />
+
 </details>
 
+---
+
+<details> 
+  <summary><strong>Entrega 3 🚀</strong></summary>
+
+  <br>
+
+</details>
+
+---
+
+<details> 
+  <summary><strong>Entrega 4 🚀</strong></summary>
+
+  <br>
+
+</details>
+
+---
 ## Equipe
 
 <div align="center">
