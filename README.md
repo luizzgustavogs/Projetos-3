@@ -41,6 +41,27 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 - Ampliar a presença digital da empresa e modernizar os processos.
 - Posicionar a Edenred como referência em soluções digitais de benefícios e pagamentos.
 
+## Entregas
+
+<details> 
+  <summary><strong> Entrega 1 🚀 </strong></summary> 
+Historias ->  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
+Figma -> https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
+  
+ScreenCast -> https://www.youtube.com/watch?v=T7A8ct2o29I</details>
+<details> 
+  <summary><strong> Entrega 2 🚀 </strong></summary>
+
+Historias 1 e 2 foram implementadas -> </details>
+
+<details> 
+  <summary><strong> Entrega 3 🚀 </strong></summary> 
+</details>
+
+<details> 
+  <summary><strong> Entrega 4 🚀 </strong></summary> 
+</details>
+
 ## Equipe
 
 <div align="center">
