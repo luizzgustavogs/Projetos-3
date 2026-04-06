@@ -74,11 +74,18 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
   **Screencast:**  
   https://www.youtube.com/watch?v=T7A8ct2o29I
 
-  **Evidências:**
+  **Issues/Bugs:**
 
+  <img width="1352" height="692" alt="image" src="https://github.com/user-attachments/assets/d9a47d49-2d05-4258-a3c6-654c23a8277b" />
+
+As issues identificadas estão diretamente relacionadas às histórias implementadas, contribuindo principalmente para a melhoria da confiabilidade, usabilidade e robustez do sistema. De forma geral, elas tratam da validação e formatação correta dos dados inseridos, da precisão nos cálculos de emissão de carbono, da consistência na recuperação de informações e do tratamento adequado de erros. Além disso, abordam aspectos importantes de experiência do usuário, como acessibilidade das mensagens, manutenção de estado após falhas e apresentação de estados vazios, garantindo uma interação mais clara e eficiente.
+
+  **Foto das Histórias**
   <img width="1855" height="917" alt="image" src="https://github.com/user-attachments/assets/a2991c6b-0833-4afa-9ed4-cff1493d5a12" />
 
   <img width="1854" height="917" alt="Captura_de_tela_2026-04-05_223913" src="https://github.com/user-attachments/assets/4f5f2639-2247-4a68-b9d8-325849c51cd8" />
+
+  
 
 </details>
 
