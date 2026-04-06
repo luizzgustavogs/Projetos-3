@@ -67,12 +67,18 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
   <br>
 
   **Status:**  
-  Histórias 1 e 2 foram implementadas
+  As seguintes histórias foram implementadas:
+   1. Cenário de uso dos cartões  
+   2. Visualizar emissão de carbono  
 
-<img width="1855" height="917" alt="image" src="https://github.com/user-attachments/assets/a2991c6b-0833-4afa-9ed4-cff1493d5a12" />
+  **Screencast:**  
+  https://www.youtube.com/watch?v=T7A8ct2o29I
 
+  **Evidências:**
 
-<img width="1854" height="917" alt="Captura_de_tela_2026-04-05_223913" src="https://github.com/user-attachments/assets/4f5f2639-2247-4a68-b9d8-325849c51cd8" />
+  <img width="1855" height="917" alt="image" src="https://github.com/user-attachments/assets/a2991c6b-0833-4afa-9ed4-cff1493d5a12" />
+
+  <img width="1854" height="917" alt="Captura_de_tela_2026-04-05_223913" src="https://github.com/user-attachments/assets/4f5f2639-2247-4a68-b9d8-325849c51cd8" />
 
 </details>
 
@@ -95,6 +101,7 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 </details>
 
 ---
+
 ## Equipe
 
 <div align="center">
