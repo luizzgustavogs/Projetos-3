@@ -40,3 +40,29 @@ textarea,
 select {
     font: inherit;
 }
+
+html {
+    overflow-y: scroll !important;
+    height: auto !important;
+}
+
+body {
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 100vh;
+    display: block !important;
+}
+
+.impact-page {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important; /* ISSO AQUI TIRA A TRAVA DOS 100VH */
+    min-height: 100vh !important;
+    overflow: visible !important; /* LIBERA O MOUSE */
+}
+
+.form-section {
+    height: auto !important;
+    min-height: 100vh;
+    display: block !important; /* Flex às vezes trava o scroll se mal configurado */
+}

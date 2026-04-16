@@ -1,12 +1,14 @@
 /* Configuração da página e posição do header idênticas à Home */
 .impact-page {
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: var(--bg);
-    overflow: hidden;
+    width: 100%;
+    /* Mude para isso: */
+    min-height: 100vh !important; 
+    height: auto !important; 
+    overflow-y: visible !important; 
+    overflow-x: hidden;
+    display: block !important;
 }
-
 .topbar {
     position: absolute;
     top: 0;
@@ -32,12 +34,11 @@
     z-index: 10;
     width: 100%;
     max-width: 800px;
-    height: 100%;
+    height: auto !important; /* Nunca deixe height 100% em formulários longos */
     margin: 0 auto;
     padding: 120px 32px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .form-header {

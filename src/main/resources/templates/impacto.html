@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="/css/impacto.css">
 
     <style>
+        /* GARANTE QUE A PÁGINA CRESÇA COM O CONTEÚDO */
+        .impact-page {
+            min-height: 100vh !important;
+            height: auto !important;
+            overflow-y: auto !important;
+            padding-bottom: 100px; /* Espaço para não bater no fundo */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section {
+            flex: 1;
+            z-index: 2; /* Fica na frente das bolas */
+        }
+
         .btn {
             display: inline-block;
             padding: 14px 36px;
@@ -39,8 +54,18 @@
             box-shadow: 0 6px 12px rgba(0, 154, 63, 0.3);
         }
 
-        .btn-primary:active {
-            transform: translateY(0);
+        .mensagem-alerta {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* AJUSTE DAS BOLAS PARA NÃO SUMIREM OU BUGAREM */
+        .bg-art {
+            z-index: 1;
+            pointer-events: none; /* Não atrapalha o clique no botão */
         }
     </style>
 </head>
@@ -96,13 +121,23 @@
                 <div class="control-box">
                     <label for="porcentagemDigitais">Qual a porcentagem de benefícios digitais hoje?</label>
                     <div class="slider-container">
-                        <span>0</span>
+                        <span>0%</span>
                         <input type="range" id="porcentagemDigitais" name="porcentagemDigitais" min="0" max="100" value="0">
                         <span id="valorPorcentagem">0%</span>
                     </div>
                 </div>
 
-                <div th:if="${mensagemErro}" class="mensagem-alerta erro" th:text="${mensagemErro}" style="display: block;"></div>
+                <div class="control-box">
+                    <label for="distanciaEntrega">Distância média de entrega (km)</label>
+                    <div class="slider-container">
+                        <span>0 km</span>
+                        <input type="range" id="distanciaEntrega" name="distanciaEntrega" min="0" max="1000" value="0">
+                        <span id="valorDistancia">0 km</span>
+                    </div>
+                </div>
+
+                <div th:if="${mensagemErro}" class="mensagem-alerta erro" th:text="${mensagemErro}"></div>
+                <div th:if="${mensagemSucesso}" class="mensagem-alerta sucesso" th:text="${mensagemSucesso}"></div>
 
                 <div class="actions" style="margin-top: 32px; text-align: center;">
                     <button type="submit" class="btn btn-primary">Calcular Emissões</button>
@@ -126,16 +161,18 @@
 </main>
 
 <script>
-    // Atualizar números dos sliders
     const sliderColab = document.getElementById('colaboradores');
     const valorColab = document.getElementById('valorColaboradores');
     sliderColab.addEventListener('input', (e) => valorColab.textContent = e.target.value);
+
+    const sliderDistancia = document.getElementById('distanciaEntrega');
+    const valorDistancia = document.getElementById('valorDistancia');
+    sliderDistancia.addEventListener('input', (e) => valorDistancia.textContent = e.target.value + ' km');
 
     const sliderPorcentagem = document.getElementById('porcentagemDigitais');
     const valorPorcent = document.getElementById('valorPorcentagem');
     sliderPorcentagem.addEventListener('input', (e) => valorPorcent.textContent = e.target.value + '%');
 
-    // Efeito de selecionar os botões de benefícios
     const pills = document.querySelectorAll('.pill');
     pills.forEach(pill => {
         pill.addEventListener('click', function() {

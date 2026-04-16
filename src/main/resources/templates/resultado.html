@@ -18,7 +18,7 @@
         <a href="/" class="brand">Eden</a> 
     </header>
 
-    <section class="form-section" style="text-align: center; max-width: 800px;">
+    <section class="form-section" style="text-align: center; max-width: 800px; margin: 0 auto; padding-bottom: 40px;">
         <div class="form-header">
             <h1 class="title">Resultado da <span>Simulação</span></h1>
             <p class="mensagem-alerta sucesso" th:text="${mensagemSucesso}" style="display: inline-block; margin-top: 15px;"></p>
@@ -59,6 +59,30 @@
             </div>
         </div>
 
+        <div style="background: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 24px; border-top: 6px solid #2ECC71;">
+            <h2 style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 24px;">🌱 Impacto Positivo da Digitalização</h2>
+
+            <div style="margin-bottom: 32px;">
+                <p style="font-size: 1rem; color: var(--text-light); margin-bottom: 8px;">Cartões físicos evitados:</p>
+                <strong style="font-size: 2.5rem; color: #2ECC71;" th:text="${qtdCartoesDigitais}">0</strong>
+            </div>
+
+            <h3 style="font-size: 1rem; color: var(--text-dark); margin-bottom: 16px; text-align: left;">Materiais Economizados:</h3>
+            <div style="display: flex; justify-content: space-around; gap: 16px;">
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; flex: 1;">
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; font-weight: 600;">♻️ Plástico</p>
+                    <strong style="font-size: 1.5rem; color: #333;" th:text="${plasticoEconomizado}">0 gramas</strong>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; flex: 1;">
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; font-weight: 600;">📄 Papel</p>
+                    <strong style="font-size: 1.5rem; color: #333;" th:text="${papelEconomizado}">0 gramas</strong>
+                </div>
+
+            </div>
+        </div>
+
         <div class="actions" style="margin-top: 40px;">
             <a href="/impacto" class="btn btn-primary" style="text-decoration: none;">Fazer nova simulação</a>
         </div>
@@ -76,6 +100,7 @@
         <div class="bg-circle bottom-front"></div>
         <div class="bg-circle bottom-detail"></div>
     </div>
+    
 </main>
 </body>
 </html>
