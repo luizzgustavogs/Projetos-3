@@ -8,6 +8,7 @@ class EdenredApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
