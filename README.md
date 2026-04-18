@@ -97,7 +97,7 @@ As issues identificadas estão diretamente relacionadas às histórias implement
   <br>
 
   **Screencast:**  
-(https://youtu.be/YHZzzunshrs](https://youtu.be/G-pNV9nYwbc)
+https://youtu.be/G-pNV9nYwbc?si=dsFTd6v5EFJL8iDU
 
 </details>
 
