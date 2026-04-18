@@ -285,3 +285,128 @@
     color: #2e7d32;
     border: 1px solid #c8e6c9;
 }
+
+/* =========================
+   CARDS DE RESULTADOS (INSERIDOS DO DESIGN)
+========================= */
+.results-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.result-card {
+    background-color: #23402A;
+    color: white;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(35, 64, 42, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card .card-label {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    font-weight: 400;
+    color: #E0E6E2;
+}
+
+.result-card .card-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.result-card .card-subtext {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #A9BBAF;
+}
+
+/* Novo botão escuro do design */
+.btn-dark {
+    background-color: #23402A;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(35, 64, 42, 0.2);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-dark:hover {
+    background-color: #1a3020;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(35, 64, 42, 0.3);
+}
+
+/* =========================
+   CARDS DE RESULTADOS (AJAX)
+========================= */
+.results-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.result-card {
+    background-color: #23402A;
+    color: white;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(35, 64, 42, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card .card-label {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    font-weight: 400;
+    color: #E0E6E2;
+}
+
+.result-card .card-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.result-card .card-subtext {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #A9BBAF;
+}
+
+.btn-dark {
+    background-color: #23402A;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(35, 64, 42, 0.2);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: #1a3020;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(35, 64, 42, 0.3);
+}

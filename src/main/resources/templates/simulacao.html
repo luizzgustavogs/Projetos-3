@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenário Simulado - Edenred</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/impacto.css">
+    <link rel="stylesheet" href="/css/simulacao.css"> </head>
+<body>
+<main class="simulacao-page">
+    <header class="topbar">
+        <a href="/" class="brand">Eden</a> 
+    </header>
+
+    <section class="sim-content">
+        <h1 class="sim-title">Simule a <strong>adoção</strong> de benefícios <strong>digitais</strong></h1>
+        <p class="sim-subtitle">Ajuste o nível de digitalização para ver como o impacto ambiental muda.</p>
+
+        <div class="terrain-container">
+            <svg viewBox="0 0 500 250" width="100%" height="auto">
+                <polygon points="120,130 250,110 400,120 440,160 280,190 90,160" fill="#91C392" />
+                <polygon points="90,160 280,190 280,210 90,180" fill="#75B077" />
+                <polygon points="280,190 440,160 440,180 280,210" fill="#629A64" />
+                <polygon points="120,130 90,160 90,180 120,150" fill="#629A64" />
+                <polygon points="400,120 440,160 440,180 400,140" fill="#508351" />
+
+                <g class="arvore-svg" style="transform-origin: 180px 140px;">
+                    <rect x="178" y="140" width="4" height="20" fill="#4A3424"/>
+                    <circle cx="180" cy="130" r="15" fill="#13741A"/>
+                    <circle cx="170" cy="125" r="10" fill="#1A9A24"/>
+                    <circle cx="190" cy="128" r="12" fill="#0D5413"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 250px 120px;">
+                    <rect x="248" y="120" width="4" height="25" fill="#4A3424"/>
+                    <circle cx="250" cy="105" r="18" fill="#1A9A24"/>
+                    <circle cx="238" cy="100" r="12" fill="#13741A"/>
+                    <circle cx="262" cy="108" r="14" fill="#0D5413"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 320px 135px;">
+                    <rect x="318" y="135" width="4" height="18" fill="#4A3424"/>
+                    <circle cx="320" cy="125" r="14" fill="#13741A"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 380px 150px;">
+                    <rect x="378" y="150" width="4" height="22" fill="#4A3424"/>
+                    <circle cx="380" cy="135" r="16" fill="#1A9A24"/>
+                    <circle cx="370" cy="130" r="10" fill="#13741A"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 210px 165px;">
+                    <rect x="208" y="165" width="5" height="20" fill="#4A3424"/>
+                    <circle cx="210" cy="150" r="17" fill="#13741A"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 290px 170px;">
+                    <rect x="288" y="170" width="4" height="15" fill="#4A3424"/>
+                    <circle cx="290" cy="160" r="12" fill="#1A9A24"/>
+                </g>
+                <g class="arvore-svg" style="transform-origin: 130px 150px;">
+                    <rect x="128" y="150" width="3" height="15" fill="#4A3424"/>
+                    <circle cx="130" cy="140" r="11" fill="#13741A"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="slider-wrapper">
+            <label>Nível de digitalização desejada para <strong><span th:text="${nomeEmpresa}">Sua empresa</span></strong></label>
+            <div class="slider-track">
+                <span>0</span>
+                <input type="range" id="sim-slider" class="sim-slider" min="0" max="100" value="0">
+                <span>100%</span>
+            </div>
+        </div>
+
+        <div id="results-box" class="results-box">
+            <div class="cards-row">
+                <div class="dark-card">
+                    <p class="label">Emissões reduzidas</p>
+                    <h2 class="value" id="val-co2">0 kg CO2</h2>
+                    <p class="sub">por ano</p>
+                </div>
+                <div class="dark-card">
+                    <p class="label">Resíduos Evitados</p>
+                    <h2 class="value" id="val-residuos">0 kg</h2>
+                    <p class="sub">por ano</p>
+                </div>
+                <div class="dark-card">
+                    <p class="label">Emissões logísticas evitadas</p>
+                    <h2 class="value" id="val-logistica">0 Kg CO2</h2>
+                    <p class="sub">por ano</p>
+                </div>
+            </div>
+            
+            <div class="cards-row" style="max-width: 550px; margin: 0 auto;">
+                <div class="dark-card">
+                    <p class="label">Plástico evitado</p>
+                    <h2 class="value" id="val-plastico">0 kg</h2>
+                    <p class="sub">por ano</p>
+                </div>
+                <div class="dark-card">
+                    <p class="label">Papel evitado</p>
+                    <h2 class="value" id="val-papel">0 kg</h2>
+                    <p class="sub">por ano</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="equivalency-box" class="equivalency-box">
+            <p class="equivalency-title">Esse impacto <strong>equivale</strong> a:</p>
+            
+            <div class="equiv-item">
+                <svg class="equiv-icon" viewBox="0 0 100 100">
+                    <circle cx="50" cy="40" r="25" fill="#1A9A24"/>
+                    <rect x="45" y="60" width="10" height="30" fill="#4A3424"/>
+                    <circle cx="25" cy="60" r="15" fill="#13741A"/>
+                    <rect x="22" y="70" width="6" height="20" fill="#4A3424"/>
+                    <circle cx="75" cy="55" r="18" fill="#0D5413"/>
+                    <rect x="71" y="70" width="8" height="20" fill="#4A3424"/>
+                </svg>
+                <span>Plantar <span id="val-arvores">0</span> árvores</span>
+            </div>
+
+            <div class="equiv-item">
+                <svg class="equiv-icon" viewBox="0 0 100 100">
+                    <path d="M20 50 L30 35 L70 35 L80 50 L90 50 L90 70 L10 70 L10 50 Z" fill="#FFC107"/>
+                    <rect x="35" y="40" width="30" height="10" fill="#fff" opacity="0.8"/>
+                    <circle cx="25" cy="70" r="12" fill="#333"/>
+                    <circle cx="75" cy="70" r="12" fill="#333"/>
+                </svg>
+                <span>1 carro fora da estrada por <span id="val-carros">0</span> meses</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-art bg-art-top" aria-hidden="true">
+        <div class="bg-circle top-dark"></div>
+        <div class="bg-circle top-medium"></div>
+        <div class="bg-circle top-light"></div>
+    </div>
+        <!-- Fundo decorativo superior direito -->
+    <div class="bg-art bg-art-top" aria-hidden="true">
+        <div class="bg-circle top-dark"></div>
+        <div class="bg-circle top-medium"></div>
+        <div class="bg-circle top-light"></div>
+    </div>
+
+    <!-- Fundo decorativo inferior esquerdo -->
+    <div class="bg-art bg-art-bottom" aria-hidden="true">
+        <div class="bg-circle bottom-back"></div>
+        <div class="bg-circle bottom-middle"></div>
+        <div class="bg-circle bottom-front"></div>
+        <div class="bg-circle bottom-detail"></div>
+    </div>
+</main>
+
+<script th:inline="javascript">
+    const colabBase = /*[[${colaboradores}]]*/ 0;
+    const distBase = /*[[${distanciaEntrega}]]*/ 0;
+
+    const slider = document.getElementById('sim-slider');
+    const arvoresSVG = document.querySelectorAll('.arvore-svg');
+    const resultsBox = document.getElementById('results-box');
+    const equivBox = document.getElementById('equivalency-box');
+
+    async function buscarSimulacao(porcentagem) {
+        const formData = new URLSearchParams();
+        formData.append('colaboradores', colabBase);
+        formData.append('distanciaEntrega', distBase);
+        formData.append('porcentagemAlvo', porcentagem);
+
+        try {
+            const resposta = await fetch('/simular-ajax', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (resposta.ok) {
+                const dados = await resposta.json();
+                if(!dados.erro) {
+                    document.getElementById('val-co2').textContent = dados.co2 + ' CO2';
+                    document.getElementById('val-residuos').textContent = dados.residuos;
+                    document.getElementById('val-logistica').innerHTML = dados.logistica + ' CO<sub>2</sub>';
+                    document.getElementById('val-plastico').textContent = dados.plastico;
+                    document.getElementById('val-papel').textContent = dados.papel;
+                    
+                    document.getElementById('val-arvores').textContent = dados.arvores;
+                    document.getElementById('val-carros').textContent = dados.carros;
+                }
+            }
+        } catch (error) {
+            console.error("Erro ao simular:", error);
+        }
+    }
+
+    slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+
+        if (val > 0) {
+            resultsBox.style.display = 'block';
+            equivBox.style.display = 'block';
+            setTimeout(() => { resultsBox.style.opacity = '1'; }, 10);
+            buscarSimulacao(val);
+        } else {
+            resultsBox.style.opacity = '0';
+            setTimeout(() => { 
+                resultsBox.style.display = 'none'; 
+                equivBox.style.display = 'none';
+            }, 500);
+        }
+
+        const totalArvores = arvoresSVG.length;
+        const arvoresAtivas = Math.ceil((val / 100) * totalArvores);
+
+        arvoresSVG.forEach((arvore, index) => {
+            if (index < arvoresAtivas) {
+                arvore.classList.add('visivel');
+            } else {
+                arvore.classList.remove('visivel');
+            }
+        });
+    });
+</script>
+</body>
+</html>
