@@ -96,6 +96,9 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 
   <br>
 
+    **Screencast:**  
+[https://www.youtube.com/watch?v=T7A8ct2o29I](https://youtu.be/YHZzzunshrs](https://youtu.be/G-pNV9nYwbc))
+
 </details>
 
 ---
