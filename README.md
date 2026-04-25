@@ -9,7 +9,7 @@
 </a>
 
 <a href="https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf">
-  <img src="https://img.shields.io/badge/Histórias-483D8B?style=for-the-badge&logo=google&logoColor=white" alt="Histórias Usuário"/>
+  <img src="https://img.shields.io/badge/Histórias-483D8B?style=for-the-badge&logo=google&logoColor=white" alt="Histórias de Usuário"/>
 </a>
 
 <a href="">
@@ -56,18 +56,23 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
 
   <br>
 
-  **Histórias:**  
-  https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf
-  
-  **Figma:**  
-  https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organização?node-id=1-16
+<a href="https://docs.google.com/document/d/1yZMSd_Czlgrz8i_YOXLihwQG_nLGgP7-2jKLeNaW3xA/edit?tab=t.0#heading=h.ajprb7hcx6yf">
+  <img src="https://img.shields.io/badge/Histórias-483D8B?style=for-the-badge&logo=google&logoColor=white" alt="Histórias de Usuário"/>
+</a>
 
-  **Screencast:**  
-  https://www.youtube.com/watch?v=T7A8ct2o29I
+<a href="https://www.figma.com/board/rF1kwQhJsbko2e4OFjlGBK/Organiza%C3%A7%C3%A3o?t=XBDJjoIDZttjq4k0-0">
+  <img src="https://img.shields.io/badge/Organização-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo Baixa Fidelidade"/>
+</a> 
+
+<a href="https://www.figma.com/design/pG6K1wrGpiHmdywLgu3kWZ/Eden?node-id=0-1&t=SrXtRCToj5QA2Wqt-1">
+  <img src="https://img.shields.io/badge/Figma Protótipo Baixa Fidelidade-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo Baixa Fidelidade"/>
+</a>
+
+<a href="https://www.youtube.com/watch?v=T7A8ct2o29I">
+    <img src="https://img.shields.io/badge/Screencast Entrega 1-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
 
 </details>
-
----
 
 <details> 
   <summary><strong>Entrega 2 🚀</strong></summary>
@@ -79,8 +84,11 @@ A Edenred enfrenta um desafio estratégico de transformação digital em que a r
    1. Cenário de uso dos cartões  
    2. Visualizar emissão de carbono  
 
-  **Screencast:**  
-  [https://www.youtube.com/watch?v=T7A8ct2o29I](https://youtu.be/YHZzzunshrs)
+  **Screencast:** 
+  
+<a href="https://www.youtube.com/watch?v=YHZzzunshrs">
+    <img src="https://img.shields.io/badge/Screencast Entrega 2-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
 
   **Issues/Bugs:**
 
@@ -97,19 +105,15 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 
 </details>
 
----
-
 <details> 
   <summary><strong>Entrega 3 🚀</strong></summary>
 
   <br>
-
-  **Screencast:**  
-https://youtu.be/G-pNV9nYwbc?si=dsFTd6v5EFJL8iDU
+<a href="https://youtu.be/G-pNV9nYwbc?si=dsFTd6v5EFJL8iDU">
+    <img src="https://img.shields.io/badge/Screencast Entrega 3-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
 
 </details>
-
----
 
 <details> 
   <summary><strong>Entrega 4 🚀</strong></summary>
