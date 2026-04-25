@@ -17,11 +17,19 @@
 </a>
 
 <a href="https://www.figma.com/design/pG6K1wrGpiHmdywLgu3kWZ/Eden?node-id=0-1&t=SrXtRCToj5QA2Wqt-1">
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo"/>
+  <img src="https://img.shields.io/badge/Figma Protótipo Baixa Fidelidade-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo Baixa Fidelidade"/>
+</a>
+
+<a href="https://www.figma.com/proto/pG6K1wrGpiHmdywLgu3kWZ/Eden?node-id=147-283&p=f&t=3aewtfu52WG3qSGZ-1&scaling=min-zoom&content-scaling=fixed&page-id=93%3A130">
+  <img src="https://img.shields.io/badge/Figma Protótipo Alta Fidelidade-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Protótipo Alta Fidelidade"/>
 </a>
 
 <a href="https://www.youtube.com/watch?v=T7A8ct2o29I">
     <img src="https://img.shields.io/badge/Screencast Entrega 1-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
+
+<a href="https://www.youtube.com/watch?v=YHZzzunshrs">
+    <img src="https://img.shields.io/badge/Screencast Entrega 2-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
 </div>
