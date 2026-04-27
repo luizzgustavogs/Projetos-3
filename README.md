@@ -121,6 +121,10 @@ As issues identificadas estão diretamente relacionadas às histórias implement
     <img src="https://img.shields.io/badge/Screencast Entrega 3-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
+**Issues/Bugs:**
+
+<img width="1507" height="946" alt="Captura de tela 2026-04-27 165646" src="https://github.com/user-attachments/assets/ed4fb6af-a220-4ef0-9ddc-6c1f9c4e5928" />
+
 **Foto das Histórias**
 
 <img width="1440" height="641" alt="Captura de Tela 2026-04-27 às 16 22 27" src="https://github.com/user-attachments/assets/344c1298-c4d6-4dc9-bd4e-35de478658bb" />
