@@ -112,8 +112,8 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 
 **Status:**  
   As seguintes histórias foram implementadas:
-   1. Visualizar redução de plástico e papel  
-   2. Visualizar impacto da logística de entrega 
+   1. Comparar impacto entre transações físicas e digitais
+   2. Traduzir impacto ambiental em equivalências
 
   **Screencast:** 
   
@@ -122,10 +122,10 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 </a>
 
 **Foto das Histórias**
-  <img width="1840" height="844" alt="Captura de tela 2026-04-27 024726" src="https://github.com/user-attachments/assets/0b5edd10-33ba-4239-8d09-c87d0b0f2f85" />
 
+<img width="1440" height="641" alt="Captura de Tela 2026-04-27 às 16 22 27" src="https://github.com/user-attachments/assets/344c1298-c4d6-4dc9-bd4e-35de478658bb" />
 
-  <img width="1831" height="941" alt="Captura de tela 2026-04-27 024759" src="https://github.com/user-attachments/assets/9c772c7f-a42c-48b9-bc12-6c3cb4b28fee" />
+<img width="1439" height="645" alt="Captura de Tela 2026-04-27 às 16 23 09" src="https://github.com/user-attachments/assets/12f5b8f8-dbf0-4857-9da2-116ae2b0ecf8" />
 
 
 </details>
