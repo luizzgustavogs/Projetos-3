@@ -44,6 +44,11 @@ public class PageController {
 
         Map<String, String> resposta = new HashMap<>();
         try {
+            if (porcentagemDigitais < 0 || porcentagemDigitais > 100) {
+                resposta.put("erro", "Porcentagem deve estar entre 0 e 100");
+                return resposta;
+            }
+
             if (colaboradores == null || colaboradores <= 0 || distanciaEntrega == null || distanciaEntrega <= 0) {
                 resposta.put("co2", "0 g");
                 resposta.put("plastico", "0 g");
@@ -98,6 +103,11 @@ public class PageController {
         Map<String, Object> resposta = new HashMap<>();
 
         try {
+            if (porcentagemAlvo < 0 || porcentagemAlvo > 100) {
+                resposta.put("erro", "Porcentagem deve estar entre 0 e 100");
+                return resposta;
+            }
+            
             if (colaboradores == null || colaboradores <= 0 || porcentagemAlvo == 0) {
                 resposta.put("co2", "0 kg");
                 resposta.put("residuos", "0 kg");
