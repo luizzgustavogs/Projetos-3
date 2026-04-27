@@ -121,7 +121,7 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 
   **Screencast:** 
   
-<a href="https://www.youtube.com/watch?v=G-pNV9nYwbc">
+<a href="https://youtu.be/1DBaahSdahs">
     <img src="https://img.shields.io/badge/Screencast Entrega 3-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
