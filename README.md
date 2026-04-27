@@ -109,9 +109,24 @@ As issues identificadas estão diretamente relacionadas às histórias implement
   <summary><strong>Entrega 3 🚀</strong></summary>
 
   <br>
-<a href="https://youtu.be/G-pNV9nYwbc?si=dsFTd6v5EFJL8iDU">
+
+**Status:**  
+  As seguintes histórias foram implementadas:
+   1. Visualizar redução de plástico e papel  
+   2. Visualizar impacto da logística de entrega 
+
+  **Screencast:** 
+  
+<a href="https://www.youtube.com/watch?v=G-pNV9nYwbc">
     <img src="https://img.shields.io/badge/Screencast Entrega 3-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
+
+**Foto das Histórias**
+  <img width="1840" height="844" alt="Captura de tela 2026-04-27 024726" src="https://github.com/user-attachments/assets/0b5edd10-33ba-4239-8d09-c87d0b0f2f85" />
+
+
+  <img width="1831" height="941" alt="Captura de tela 2026-04-27 024759" src="https://github.com/user-attachments/assets/9c772c7f-a42c-48b9-bc12-6c3cb4b28fee" />
+
 
 </details>
 
