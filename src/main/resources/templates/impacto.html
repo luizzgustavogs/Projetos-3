@@ -236,12 +236,14 @@
     }
 
     sliderColab.addEventListener('input', (e) => {
-        valorColab.textContent = e.target.value;
+        const valor = parseInt(e.target.value);
+        valorColab.textContent = valor.toLocaleString('pt-BR');
         atualizarCalculos();
     });
 
     sliderDistancia.addEventListener('input', (e) => {
-        valorDistancia.textContent = e.target.value + ' km';
+        const valor = parseInt(e.target.value);
+        valorDistancia.textContent = valor.toLocaleString('pt-BR') + ' km';
         atualizarCalculos();
     });
 
