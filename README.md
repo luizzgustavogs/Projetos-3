@@ -129,6 +129,10 @@ As issues identificadas estão diretamente relacionadas às histórias implement
 
 <img width="1507" height="946" alt="Captura de tela 2026-04-27 165646" src="https://github.com/user-attachments/assets/ed4fb6af-a220-4ef0-9ddc-6c1f9c4e5928" />
 
+As issues identificadas nesta entrega estão diretamente relacionadas às histórias implementadas, com foco na melhoria da confiabilidade e integridade dos dados no sistema. Em especial, destacam-se ajustes na validação de percentuais, garantindo que os valores inseridos respeitem limites definidos (0 a 100), agora tratados também no backend.
+
+Além disso, as correções reduzem a dependência exclusiva do frontend para validações, prevenindo inconsistências e reforçando a robustez da aplicação. Essas melhorias contribuem para um comportamento mais seguro e previsível do sistema, além de uma experiência mais consistente para o usuário.
+
 **Foto das Histórias**
 
 <img width="1440" height="641" alt="Captura de Tela 2026-04-27 às 16 22 27" src="https://github.com/user-attachments/assets/344c1298-c4d6-4dc9-bd4e-35de478658bb" />
