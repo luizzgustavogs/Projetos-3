@@ -4,7 +4,7 @@
 
 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
 
-<a href="https://sites.google.com/d/1QC_0PZsDR7u_jQ4WzQiHtvbm-t_pX3-A/p/1tc1EB90UIzSXgyXSQ5CcjT3fdm-uKuS8/edit?pli=1">
+<a href="https://sites.google.com/cesar.school/equipe1projetos3/home?authuser=0">
   <img src="https://img.shields.io/badge/Google%20Sites-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Sites"/>
 </a>
 
@@ -32,7 +32,7 @@
     <img src="https://img.shields.io/badge/Screencast Entrega 2-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
-<a href="https://www.youtube.com/watch?v=G-pNV9nYwbc">
+<a href="https://www.youtube.com/watch?v=1DBaahSdahs">
     <img src="https://img.shields.io/badge/Screencast Entrega 3-b50404?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
 
