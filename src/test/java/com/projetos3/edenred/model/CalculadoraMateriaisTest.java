@@ -19,7 +19,7 @@ public class CalculadoraMateriaisTest {
 
     @Test
     public void deveriaCalcularLogisticaComSucesso() {
-        double resultado = CalculadoraMateriais.calcularLogistica(10, 100.0);
+        double resultado = CalculadoraMateriais.calcularLogistica(10);
         assertEquals(150.0, resultado);
     }
 

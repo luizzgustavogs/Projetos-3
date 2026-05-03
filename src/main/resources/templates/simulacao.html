@@ -69,9 +69,14 @@
         <div class="slider-wrapper">
             <label>Nível de digitalização desejada para <strong><span th:text="${nomeEmpresa}">Sua empresa</span></strong></label>
             <div class="slider-track">
-                <span>0</span>
-                <input type="range" id="sim-slider" class="sim-slider" min="0" max="100" value="0">
-                <span>100%</span>
+                <span id="min-label" th:text="${porcentagemDigitais} + '%'">0%</span>
+                <input type="range"
+                       id="sim-slider"
+                       class="sim-slider"
+                       min="0"
+                       max="100"
+                       th:value="${porcentagemDigitais}">
+                <span id="max-label">100%</span>
             </div>
         </div>
 
@@ -158,7 +163,7 @@
 
 <script th:inline="javascript">
     const colabBase = /*[[${colaboradores}]]*/ 0;
-    const distBase = /*[[${distanciaEntrega}]]*/ 0;
+    const porcentagemAtual = /*[[${porcentagemDigitais}]]*/ 0;
 
     const slider = document.getElementById('sim-slider');
     const arvoresSVG = document.querySelectorAll('.arvore-svg');
@@ -168,7 +173,7 @@
     async function buscarSimulacao(porcentagem) {
         const formData = new URLSearchParams();
         formData.append('colaboradores', colabBase);
-        formData.append('distanciaEntrega', distBase);
+        formData.append('porcentagemAtual', porcentagemAtual);
         formData.append('porcentagemAlvo', porcentagem);
 
         try {
@@ -195,8 +200,23 @@
         }
     }
 
+    window.addEventListener('DOMContentLoaded', () => {
+        const valorInicial = parseInt(slider.value);
+    
+        if (valorInicial > 0) {
+            buscarSimulacao(valorInicial);
+        }
+    });
+
     slider.addEventListener('input', (e) => {
         const val = parseInt(e.target.value);
+        document.getElementById("max-label").textContent = val + "%";
+
+        if (val < porcentagemAtual) {
+            alert("Você não pode reduzir o nível de digitalização.");
+            slider.value = porcentagemAtual;
+            return;
+        }
 
         if (val > 0) {
             resultsBox.style.display = 'block';

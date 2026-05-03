@@ -15,7 +15,6 @@ public class CalculadoraController {
     public Map<String, String> calcularImpacto(@RequestBody Map<String, Double> dados) {
         int colaboradores = dados.getOrDefault("colaboradores", 0.0).intValue();
         double porcentagemDigitais = dados.getOrDefault("porcentagemDigitais", 0.0);
-        double distanciaEntrega = dados.getOrDefault("distanciaEntrega", 0.0);
 
         // Se 100% é digital, cartões físicos = 0. Senão, calcula a proporção.
         int cartoesFisicos = (int) (colaboradores * (1.0 - (porcentagemDigitais / 100.0)));
@@ -23,7 +22,7 @@ public class CalculadoraController {
         // Usando as suas classes para calcular
         double co2Gramas = CalculadoraCO2.calcularEmissaoTotal(cartoesFisicos);
         double plasticoGramas = CalculadoraMateriais.calcularPlastico(cartoesFisicos);
-        double logisticaGramas = CalculadoraMateriais.calcularLogistica(cartoesFisicos, distanciaEntrega);
+        double logisticaGramas = CalculadoraMateriais.calcularLogistica(cartoesFisicos);
 
         // Devolvendo os dados formatados em JSON para o frontend
         Map<String, String> resultados = new HashMap<>();
