@@ -163,7 +163,6 @@
 
 <script th:inline="javascript">
     const colabBase = /*[[${colaboradores}]]*/ 0;
-    const distBase = /*[[${distanciaEntrega}]]*/ 0;
     const porcentagemAtual = /*[[${porcentagemDigitais}]]*/ 0;
 
     const slider = document.getElementById('sim-slider');
@@ -174,7 +173,6 @@
     async function buscarSimulacao(porcentagem) {
         const formData = new URLSearchParams();
         formData.append('colaboradores', colabBase);
-        formData.append('distanciaEntrega', distBase);
         formData.append('porcentagemAtual', porcentagemAtual);
         formData.append('porcentagemAlvo', porcentagem);
 

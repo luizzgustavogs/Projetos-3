@@ -29,7 +29,6 @@ public class PageController {
     public String calcularEmissoes(
             @RequestParam(required = false, defaultValue = "0") Integer colaboradores,
             @RequestParam(required = false, defaultValue = "0") Integer porcentagemDigitais,
-            @RequestParam(required = false, defaultValue = "0") Double distanciaEntrega,
             Model model) {
         // Método original mantido
         return "impacto";
@@ -39,8 +38,8 @@ public class PageController {
     @ResponseBody
     public Map<String, String> calcularAjax(
             @RequestParam(required = false, defaultValue = "0") Integer colaboradores,
-            @RequestParam(required = false, defaultValue = "0") Integer porcentagemDigitais,
-            @RequestParam(required = false, defaultValue = "0") Double distanciaEntrega) {
+            @RequestParam(required = false, defaultValue = "0") Integer porcentagemDigitais
+     ) {
 
         Map<String, String> resposta = new HashMap<>();
         try {
@@ -49,7 +48,7 @@ public class PageController {
                 return resposta;
             }
 
-            if (colaboradores == null || colaboradores <= 0 || distanciaEntrega == null || distanciaEntrega <= 0) {
+            if (colaboradores == null || colaboradores <= 0) {
                 resposta.put("co2", "0 g");
                 resposta.put("plastico", "0 g");
                 resposta.put("logistica", "0 g");
@@ -61,7 +60,7 @@ public class PageController {
 
             double plasticoUtilizado = CalculadoraMateriais.calcularPlastico(cartoesFisicos);
             double producao = CalculadoraCO2.calcularProducao(cartoesFisicos);
-            double transporte = CalculadoraMateriais.calcularLogistica(cartoesFisicos, distanciaEntrega);
+            double transporte = CalculadoraMateriais.calcularLogistica(cartoesFisicos);
             double descarte = CalculadoraCO2.calcularDescarte(cartoesFisicos);
             double totalCO2 = producao + transporte + descarte;
 
@@ -82,7 +81,6 @@ public class PageController {
     public String simulacao(
         @RequestParam String nomeEmpresa,
         @RequestParam int colaboradores,
-        @RequestParam int distanciaEntrega,
         @RequestParam int porcentagemDigitais,
         Model model
     ) {
@@ -90,7 +88,6 @@ public class PageController {
         // Passamos os dados base para a tela. O JavaScript vai usar isso no slider.
         model.addAttribute("nomeEmpresa", nomeEmpresa);
         model.addAttribute("colaboradores", colaboradores);
-        model.addAttribute("distanciaEntrega", distanciaEntrega);
         model.addAttribute("porcentagemDigitais", porcentagemDigitais);
         
         return "simulacao";
@@ -100,7 +97,6 @@ public class PageController {
     @ResponseBody
     public Map<String, Object> simular(
         @RequestParam Integer colaboradores,
-        @RequestParam Integer distanciaEntrega,
         @RequestParam int porcentagemAtual,
         @RequestParam int porcentagemAlvo
 ) {
@@ -112,13 +108,13 @@ public class PageController {
                 resposta.put("erro", "Não é possível reduzir o nível de digitalização.");
                 return resposta;
             }
-            
+
             if (porcentagemAtual < 0 || porcentagemAtual > 100 || porcentagemAlvo < 0 || porcentagemAlvo > 100) {
                 resposta.put("erro", "Porcentagens devem estar entre 0 e 100");
                 return resposta;
             }
 
-            if (colaboradores == null || colaboradores <= 0 || distanciaEntrega == null || distanciaEntrega <= 0) {
+            if (colaboradores == null || colaboradores <= 0) {
                 resposta.put("co2", "0 kg");
                 resposta.put("residuos", "0 kg");
                 resposta.put("logistica", "0 kg");
@@ -140,9 +136,9 @@ public class PageController {
                 return resposta;
             }
 
-            double impactoAtual = calcularImpacto(colaboradores, distanciaEntrega,porcentagemAtual);
+            double impactoAtual = calcularImpacto(colaboradores, porcentagemAtual);
 
-            double impactoFuturo = calcularImpacto(colaboradores, distanciaEntrega, porcentagemAlvo);
+            double impactoFuturo = calcularImpacto(colaboradores, porcentagemAlvo);
 
             double reducaoCO2 = impactoAtual - impactoFuturo;
 
@@ -154,7 +150,8 @@ public class PageController {
             double papelFuturo = papelAtual * (1 - (porcentagemAlvo / 100.0));
             double papelReduzido = papelAtual - papelFuturo;
 
-            double logisticaAtual = CalculadoraMateriais.calcularLogistica(colaboradores, distanciaEntrega);
+            int cartoesFisicosAtual = colaboradores * (100 - porcentagemAtual) / 100;
+            double logisticaAtual = CalculadoraMateriais.calcularLogistica(cartoesFisicosAtual);
             double logisticaFuturo = logisticaAtual * (1 - (porcentagemAlvo / 100.0));
             double logisticaReduzida = logisticaAtual - logisticaFuturo;
 
@@ -179,11 +176,11 @@ public class PageController {
         }
     }
 
-    private double calcularImpacto(int colaboradores, int distanciaEntrega, int porcentagemDigital) {
+    private double calcularImpacto(int colaboradores, int porcentagemDigital) {
 
         double fatorDigital = porcentagemDigital / 100.0;
     
-        double impactoFisico = CalculadoraMateriais.calcularLogistica(colaboradores, distanciaEntrega);
+        double impactoFisico = CalculadoraMateriais.calcularLogistica(colaboradores);
     
         // Simulação de impacto digital (menor que físico)
         double impactoDigital = impactoFisico * 0.3;
