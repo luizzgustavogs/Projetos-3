@@ -80,35 +80,45 @@ public class PageController {
 
     @GetMapping("/simulacao")
     public String simulacao(
-            @RequestParam(required = false, defaultValue = "0") Integer colaboradores,
-            @RequestParam(required = false, defaultValue = "0") Double distanciaEntrega,
-            @RequestParam(required = false, defaultValue = "Sua Empresa") String nomeEmpresa,
-            Model model) {
+        @RequestParam String nomeEmpresa,
+        @RequestParam int colaboradores,
+        @RequestParam int distanciaEntrega,
+        @RequestParam int porcentagemDigitais,
+        Model model
+    ) {
         
         // Passamos os dados base para a tela. O JavaScript vai usar isso no slider.
+        model.addAttribute("nomeEmpresa", nomeEmpresa);
         model.addAttribute("colaboradores", colaboradores);
         model.addAttribute("distanciaEntrega", distanciaEntrega);
-        model.addAttribute("nomeEmpresa", nomeEmpresa);
+        model.addAttribute("porcentagemDigitais", porcentagemDigitais);
         
         return "simulacao";
     }
 
     @PostMapping("/simular-ajax")
     @ResponseBody
-    public Map<String, Object> simularAjax(
-            @RequestParam(required = false, defaultValue = "0") Integer colaboradores,
-            @RequestParam(required = false, defaultValue = "0") Double distanciaEntrega,
-            @RequestParam(required = false, defaultValue = "0") Integer porcentagemAlvo) {
+    public Map<String, Object> simular(
+        @RequestParam Integer colaboradores,
+        @RequestParam Integer distanciaEntrega,
+        @RequestParam int porcentagemAtual,
+        @RequestParam int porcentagemAlvo
+) {
 
         Map<String, Object> resposta = new HashMap<>();
 
         try {
-            if (porcentagemAlvo < 0 || porcentagemAlvo > 100) {
-                resposta.put("erro", "Porcentagem deve estar entre 0 e 100");
+            if (porcentagemAlvo < porcentagemAtual) {
+                resposta.put("erro", "Não é possível reduzir o nível de digitalização.");
                 return resposta;
             }
             
-            if (colaboradores == null || colaboradores <= 0 || porcentagemAlvo == 0) {
+            if (porcentagemAtual < 0 || porcentagemAtual > 100 || porcentagemAlvo < 0 || porcentagemAlvo > 100) {
+                resposta.put("erro", "Porcentagens devem estar entre 0 e 100");
+                return resposta;
+            }
+
+            if (colaboradores == null || colaboradores <= 0 || distanciaEntrega == null || distanciaEntrega <= 0) {
                 resposta.put("co2", "0 kg");
                 resposta.put("residuos", "0 kg");
                 resposta.put("logistica", "0 kg");
@@ -119,29 +129,47 @@ public class PageController {
                 return resposta;
             }
 
-            // Quantos cartões físicos deixarão de existir com essa nova porcentagem?
-            int cartoesConvertidos = (colaboradores * porcentagemAlvo) / 100;
+            if (porcentagemAtual == porcentagemAlvo) {
+                resposta.put("co2", "0 kg");
+                resposta.put("residuos", "0 kg");
+                resposta.put("logistica", "0 kg");
+                resposta.put("plastico", "0 kg");
+                resposta.put("papel", "0 kg");
+                resposta.put("arvores", 0);
+                resposta.put("carros", 0);
+                return resposta;
+            }
 
-            double plastico = CalculadoraMateriais.calcularPlastico(cartoesConvertidos);
-            double papel = CalculadoraMateriais.calcularPapel(cartoesConvertidos);
-            double producao = CalculadoraCO2.calcularProducao(cartoesConvertidos);
-            double transporte = CalculadoraMateriais.calcularLogistica(cartoesConvertidos, distanciaEntrega);
-            double descarte = CalculadoraCO2.calcularDescarte(cartoesConvertidos);
-            
-            double totalCO2 = producao + transporte + descarte;
-            double residuos = plastico + papel;
+            double impactoAtual = calcularImpacto(colaboradores, distanciaEntrega,porcentagemAtual);
 
-            // Fórmulas de equivalência (Ajuste os divisores conforme sua regra de negócio real)
-            int arvoresPlantadas = (int) Math.ceil(totalCO2 / 20.0); // Ex: 1 árvore a cada 20kg
-            int mesesCarro = (int) Math.ceil(totalCO2 / 100.0);      // Ex: 1 mês de carro a cada 100kg
+            double impactoFuturo = calcularImpacto(colaboradores, distanciaEntrega, porcentagemAlvo);
 
-            resposta.put("co2", CalculadoraMateriais.formatarPeso(totalCO2));
+            double reducaoCO2 = impactoAtual - impactoFuturo;
+
+            double plasticoAtual = CalculadoraMateriais.calcularPlastico(colaboradores);
+            double plasticoFuturo = plasticoAtual * (1 - (porcentagemAlvo / 100.0));
+            double plasticoReduzido = plasticoAtual - plasticoFuturo;
+
+            double papelAtual = CalculadoraMateriais.calcularPapel(colaboradores);
+            double papelFuturo = papelAtual * (1 - (porcentagemAlvo / 100.0));
+            double papelReduzido = papelAtual - papelFuturo;
+
+            double logisticaAtual = CalculadoraMateriais.calcularLogistica(colaboradores, distanciaEntrega);
+            double logisticaFuturo = logisticaAtual * (1 - (porcentagemAlvo / 100.0));
+            double logisticaReduzida = logisticaAtual - logisticaFuturo;
+
+            double residuos = plasticoReduzido + papelReduzido;
+            int arvores = (int) (reducaoCO2 / 20); // ajuste se quiser mais realista
+            int carros = (int) (reducaoCO2 / 120);
+
+            resposta.put("co2",CalculadoraMateriais.formatarPeso(reducaoCO2));
             resposta.put("residuos", CalculadoraMateriais.formatarPeso(residuos));
-            resposta.put("logistica", CalculadoraMateriais.formatarPeso(transporte));
-            resposta.put("plastico", CalculadoraMateriais.formatarPeso(plastico));
-            resposta.put("papel", CalculadoraMateriais.formatarPeso(papel));
-            resposta.put("arvores", arvoresPlantadas);
-            resposta.put("carros", mesesCarro);
+            resposta.put("logistica", CalculadoraMateriais.formatarPeso(logisticaReduzida));
+            resposta.put("plastico", CalculadoraMateriais.formatarPeso(plasticoReduzido));
+            resposta.put("papel", CalculadoraMateriais.formatarPeso(papelReduzido));
+
+            resposta.put("arvores", Math.max(arvores, 0));
+            resposta.put("carros", Math.max(carros, 0));
 
             return resposta;
 
@@ -149,5 +177,18 @@ public class PageController {
             resposta.put("erro", "Erro no cálculo");
             return resposta;
         }
+    }
+
+    private double calcularImpacto(int colaboradores, int distanciaEntrega, int porcentagemDigital) {
+
+        double fatorDigital = porcentagemDigital / 100.0;
+    
+        double impactoFisico = CalculadoraMateriais.calcularLogistica(colaboradores, distanciaEntrega);
+    
+        // Simulação de impacto digital (menor que físico)
+        double impactoDigital = impactoFisico * 0.3;
+    
+        return impactoFisico * (1 - fatorDigital) +
+               impactoDigital * fatorDigital;
     }
 }
