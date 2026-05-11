@@ -3,7 +3,9 @@ package com.projetos3.edenred.model;
 public class CalculadoraMateriais {
     
     private static final double PESO_CARTAO_PLASTICO_GRAMAS = 5.0; 
-    private static final double PESO_COMPROVANTE_PAPEL_GRAMAS = 2.0; 
+    private static final double PESO_COMPROVANTE_PAPEL_GRAMAS = 2.0;
+    // Distância média estimada para entrega de cartões (baseado em cenário urbano) 
+    private static final double DISTANCIA_MEDIA_KM = 50.0;
     
     // CRITÉRIO: Definir fator de emissão do transporte (ex: 0.15g de CO2 por km por cartão)
     private static final double FATOR_EMISSAO_TRANSPORTE = 0.15;
@@ -18,14 +20,11 @@ public class CalculadoraMateriais {
         return transacoesDigitais * PESO_COMPROVANTE_PAPEL_GRAMAS;
     }
 
-    // CRITÉRIO: Calcular emissões com base na quantidade e distância
-    public static double calcularLogistica(int quantidadeCartoes, double distanciaKm) {
-        // CRITÉRIO: Bloquear cálculo em caso de dados inválidos
-        if (quantidadeCartoes <= 0 || distanciaKm <= 0) {
+    public static double calcularLogistica(int quantidadeCartoes) {
+        if (quantidadeCartoes <= 0) {
             return 0.0;
         }
-        // Aplicar fator de emissão do transporte
-        return quantidadeCartoes * distanciaKm * FATOR_EMISSAO_TRANSPORTE;
+        return quantidadeCartoes * DISTANCIA_MEDIA_KM * FATOR_EMISSAO_TRANSPORTE;
     }
 
     public static String formatarPeso(double gramas) {

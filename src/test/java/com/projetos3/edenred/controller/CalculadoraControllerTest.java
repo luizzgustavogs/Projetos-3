@@ -17,7 +17,7 @@ public class CalculadoraControllerTest {
     @Test
     public void deveriaCalcularImpactoComSucesso() throws Exception {
 
-        String jsonEnvio = "{\"colaboradores\": 100, \"porcentagemDigitais\": 50, \"distanciaEntrega\": 10}";
+        String jsonEnvio = "{\"colaboradores\": 100, \"porcentagemDigitais\": 50 }";
         mockMvc.perform(post("/api/calculadora/impacto")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonEnvio))

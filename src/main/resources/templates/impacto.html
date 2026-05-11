@@ -125,15 +125,6 @@
                     </div>
                 </div>
 
-                <div class="control-box">
-                    <label for="distanciaEntrega">Distância média de entrega (km)</label>
-                    <div class="slider-container">
-                        <span>0 km</span>
-                        <input type="range" id="distanciaEntrega" name="distanciaEntrega" min="0" max="1000" value="0">
-                        <span id="valorDistancia">0 km</span>
-                    </div>
-                </div>
-
                 <div th:if="${mensagemErro}" class="mensagem-alerta erro" th:text="${mensagemErro}"></div>
                 <div th:if="${mensagemSucesso}" class="mensagem-alerta sucesso" th:text="${mensagemSucesso}"></div>
 
@@ -183,21 +174,16 @@
     
     const sliderColab = document.getElementById('colaboradores');
     const valorColab = document.getElementById('valorColaboradores');
-    const sliderDistancia = document.getElementById('distanciaEntrega');
-    const valorDistancia = document.getElementById('valorDistancia');
     const sliderPorcentagem = document.getElementById('porcentagemDigitais');
     const valorPorcent = document.getElementById('valorPorcentagem');
 
     async function atualizarCalculos() {
         const c = parseInt(sliderColab.value);
-        const d = parseInt(sliderDistancia.value);
         const p = parseInt(sliderPorcentagem.value);
 
-        // SÓ MOSTRA OS RESULTADOS SE TODOS OS SLIDERS FOREM MAIORES QUE ZERO
-        if (c > 0 && d > 0 && p > 0) {
+        if (c > 0 && p >= 0 && p <= 100) {
             const formData = new URLSearchParams();
             formData.append('colaboradores', c);
-            formData.append('distanciaEntrega', d);
             formData.append('porcentagemDigitais', p);
 
             try {
@@ -241,12 +227,6 @@
         atualizarCalculos();
     });
 
-    sliderDistancia.addEventListener('input', (e) => {
-        const valor = parseInt(e.target.value);
-        valorDistancia.textContent = valor.toLocaleString('pt-BR') + ' km';
-        atualizarCalculos();
-    });
-
     sliderPorcentagem.addEventListener('input', (e) => {
         valorPorcent.textContent = e.target.value + '%';
         atualizarCalculos();
@@ -281,10 +261,9 @@
 
         const nome = document.getElementById('nomeEmpresa').value;
         const colab = document.getElementById('colaboradores').value;
-        const dist = document.getElementById('distanciaEntrega').value;
         const porc = document.getElementById('porcentagemDigitais').value;
         
-        window.location.href = `/simulacao?nomeEmpresa=${encodeURIComponent(nome)}&colaboradores=${colab}&distanciaEntrega=${dist}&porcentagemDigitais=${porc}`;
+        window.location.href = `/simulacao?nomeEmpresa=${encodeURIComponent(nome)}&colaboradores=${colab}&porcentagemDigitais=${porc}`
     }
 </script>
 </body>
