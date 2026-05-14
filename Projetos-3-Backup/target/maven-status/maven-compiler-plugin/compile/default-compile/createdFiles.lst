@@ -1,0 +1,9 @@
+com\projetos3\edenred\controller\PageController.class
+com\projetos3\edenred\model\CalculadoraMateriais.class
+com\projetos3\edenred\dados\BancoEmMemoria.class
+com\projetos3\edenred\EdenredApplication.class
+com\projetos3\edenred\controller\LoginController.class
+com\projetos3\edenred\model\Empresa.class
+com\projetos3\edenred\controller\AdminController.class
+com\projetos3\edenred\model\DadosEmpresaException.class
+com\projetos3\edenred\model\CalculadoraCO2.class

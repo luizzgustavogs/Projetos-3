@@ -1,0 +1,294 @@
+/* =========================
+   PÁGINA DE LOGIN
+========================= */
+.login-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 420px;
+    padding: 0 24px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.login-header .brand {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--green-dark);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.login-header .subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+/* Formulário */
+.login-form {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background: var(--bg);
+    outline: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: var(--green-dark);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: var(--green-dark);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.login-btn:hover {
+    background: #006a08;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 129, 10, 0.25);
+}
+
+/* Mensagem de erro */
+.login-erro {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Link de volta */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-footer a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.login-footer a:hover {
+    color: var(--green-dark);
+}
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+.bg-art {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.bg-art-top {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 270px;
+    overflow: hidden;
+}
+
+.top-dark {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -86px;
+    background: var(--green-dark);
+}
+
+.top-medium {
+    width: 240px;
+    height: 240px;
+    top: -12px;
+    right: -104px;
+    background: var(--green-medium);
+}
+
+.top-light {
+    width: 170px;
+    height: 170px;
+    top: 47px;
+    right: -78px;
+    background: rgba(18, 175, 25, 0.42);
+}
+
+.bg-art-bottom {
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    height: 390px;
+    overflow: hidden;
+}
+
+.bottom-back {
+    width: 240px;
+    height: 240px;
+    left: -105px;
+    top: 40px;
+    background: var(--green-medium);
+}
+
+.bottom-middle {
+    width: 245px;
+    height: 245px;
+    left: -180px;
+    top: 118px;
+    background: var(--green-dark);
+}
+
+.bottom-front {
+    width: 235px;
+    height: 235px;
+    left: -42px;
+    bottom: -95px;
+    background: var(--green-light);
+}
+
+.bottom-detail {
+    width: 135px;
+    height: 135px;
+    left: -18px;
+    bottom: -8px;
+    background: rgba(10, 150, 18, 0.38);
+}
+
+/* =========================
+   ACESSO ADMIN
+========================= */
+.admin-access {
+    margin-top: 24px;
+}
+
+.admin-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.admin-divider::before,
+.admin-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.admin-divider span {
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-admin-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: 1.5px solid var(--green-dark);
+    background: transparent;
+    color: var(--green-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-admin-login:hover {
+    background: var(--green-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 129, 10, 0.2);
+}
+
+.link-voltar {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-voltar:hover {
+    color: var(--green-dark);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 28px 22px;
+    }
+
+    .login-header .brand {
+        font-size: 2.4rem;
+    }
+}

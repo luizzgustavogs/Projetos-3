@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f3f3f3;
+    --text: #111111;
+    --muted: #5c5c5c;
+
+    --green-dark: #00810a;
+    --green-medium: #08a60d;
+    --green-light: #0bb80f;
+    --green-detail: #1e8f24;
+
+    --white: #ffffff;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.impact-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.form-section {
+    min-height: 100vh;
+}
+
+/* Topbar Global */
+.topbar { 
+    position: relative; 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 30px; 
+}
+.topbar .brand { 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    color: var(--green-dark); 
+    text-decoration: none; 
+}
+.topbar-right { 
+    display: flex; 
+    gap: 15px; 
+    align-items: center; 
+}
+.topbar-right span { 
+    font-weight: 700; 
+    color: var(--text); 
+}
+
+/* Botões Globais */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--green-dark);
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: var(--green-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 129, 10, 0.3);
+}
+
+.btn-dark {
+    background: #23402A;
+    color: white !important;
+}
+
+.btn-dark:hover {
+    background: #1a3020;
+    transform: translateY(-2px);
+}
+
+.btn-login-sm {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1.5px solid var(--green-dark);
+    color: var(--green-dark) !important;
+    font-weight: 700;
+    background: transparent;
+}
+
+.btn-login-sm:hover {
+    background: var(--green-dark);
+    color: white !important;
+}

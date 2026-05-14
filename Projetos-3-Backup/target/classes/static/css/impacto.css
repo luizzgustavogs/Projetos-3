@@ -1,0 +1,353 @@
+/* Configuração da página e posição do header idênticas à Home */
+.impact-page {
+    position: relative;
+    width: 100%;
+    /* Mude para isso: */
+    min-height: 100vh !important; 
+    height: auto !important; 
+    overflow-y: visible !important; 
+    overflow-x: hidden;
+    display: block !important;
+}
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 28px;
+    z-index: 20;
+}
+
+.brand {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+/* =========================
+   ESTILOS DO FORMULÁRIO
+========================= */
+.form-section {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 800px;
+    height: auto !important;
+    margin: 0 auto;
+    padding: 10px 32px 10px; /* Reduzido drasticamente pois a topbar já ocupa espaço (position: relative) */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 20px; /* Metade do original */
+}
+
+.form-header .title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.form-header .subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.impact-form fieldset {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.group-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+/* Campos de Input de Texto */
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+}
+
+.input-box label, 
+.control-box label {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.input-box input {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    color: var(--text);
+}
+
+.input-box input:focus {
+    border-color: var(--green-dark);
+}
+
+/* Sliders */
+.control-box {
+    margin-bottom: 24px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.slider-container span {
+    font-size: 0.85rem;
+    color: var(--muted);
+    min-width: 45px; /* Evita que o texto pule quando o número cresce */
+}
+
+.slider-container input[type="range"] {
+    flex: 1;
+    accent-color: var(--green-dark);
+}
+
+/* Botões de Benefícios (Pills) */
+.pills-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pill:hover, .pill:focus {
+    border-color: var(--green-dark);
+    color: var(--green-dark);
+}
+
+/* ADICIONADO: Estilo para quando a pílula for selecionada */
+.pill.selecionada {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+    color: white;
+}
+
+.pill-add {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--green-dark);
+    color: var(--white);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+
+.bg-art {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* topo direito */
+.bg-art-top {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 270px;
+    overflow: hidden;
+}
+
+.top-dark {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -86px;
+    background: var(--green-dark);
+}
+
+.top-medium {
+    width: 240px;
+    height: 240px;
+    top: -12px;
+    right: -104px;
+    background: var(--green-medium);
+}
+
+.top-light {
+    width: 170px;
+    height: 170px;
+    top: 47px;
+    right: -78px;
+    background: rgba(18, 175, 25, 0.42);
+}
+
+/* inferior esquerdo */
+.bg-art-bottom {
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    height: 390px;
+    overflow: hidden;
+}
+
+.bottom-back {
+    width: 240px;
+    height: 240px;
+    left: -105px;
+    top: 40px;
+    background: var(--green-medium);
+}
+
+.bottom-middle {
+    width: 245px;
+    height: 245px;
+    left: -180px;
+    top: 118px;
+    background: var(--green-dark);
+}
+
+.bottom-front {
+    width: 235px;
+    height: 235px;
+    left: -42px;
+    bottom: -95px;
+    background: var(--green-light);
+}
+
+.bottom-detail {
+    width: 135px;
+    height: 135px;
+    left: -18px;
+    bottom: -8px;
+    background: rgba(10, 150, 18, 0.38);
+}
+
+/* =========================
+   ADICIONADO: MENSAGENS DE ALERTA
+========================= */
+.mensagem-alerta {
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    display: none; 
+}
+
+.mensagem-alerta.erro {
+    display: block;
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.mensagem-alerta.sucesso {
+    display: block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* =========================
+   CARDS DE RESULTADOS (INSERIDOS DO DESIGN)
+========================= */
+.results-grid {
+    display: flex;
+    gap: 15px; /* Reduzido de 20px */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.result-card {
+    background-color: #23402A;
+    color: white;
+    border-radius: 12px;
+    padding: 16px 15px; /* Reduzido de 24px 20px */
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(35, 64, 42, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card .card-label {
+    font-size: 0.85rem;
+    margin-bottom: 8px; /* Reduzido de 16px */
+    font-weight: 400;
+    color: #E0E6E2;
+}
+
+.result-card .card-value {
+    font-size: 1.8rem; /* Reduzido de 2.2rem */
+    font-weight: 700;
+    margin-bottom: 4px; /* Reduzido de 8px */
+    line-height: 1;
+}
+
+.result-card .card-subtext {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #A9BBAF;
+}
+
+/* Novo botão escuro do design */
+.btn-dark {
+    background-color: #23402A;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(35, 64, 42, 0.2);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: #1a3020;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(35, 64, 42, 0.3);
+}

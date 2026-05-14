@@ -1,0 +1,302 @@
+/* =========================
+   PÁGINA ADMIN PREMIUM (COMPACTA)
+========================= */
+.admin-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+.topbar {
+    position: relative;
+    width: 100%;
+    padding: 22px 28px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .brand {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--green-dark);
+}
+
+/* Conteúdo */
+.admin-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 32px 40px;
+}
+
+.admin-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.admin-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* Resumo do Dashboard */
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--green-dark);
+}
+
+.summary-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.summary-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+/* Formulário de Cadastro Compacto */
+.admin-form {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.admin-form .section-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--green-dark);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+}
+
+.form-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.form-field input,
+.form-field select {
+    padding: 10px 16px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background: var(--bg);
+    outline: none;
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.form-field input:focus {
+    border-color: var(--green-dark);
+}
+
+.form-field .hint {
+    font-size: 0.7rem;
+    color: #999;
+}
+
+/* Checkbox */
+.checkbox-field {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 8px !important;
+    margin-top: 20px;
+}
+
+.admin-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: var(--green-dark);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.admin-submit:hover {
+    background: #006a08;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 129, 10, 0.2);
+}
+
+/* Tabela Elegante */
+.empresas-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.empresas-table th {
+    background: #23402A;
+    color: #fff;
+    padding: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.empresas-table td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   FUNDO DECORATIVO (MESMO DA HOME)
+========================= */
+.bg-art {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.bg-art-top {
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.top-dark {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -70px;
+    background: var(--green-dark);
+}
+
+.top-medium {
+    width: 200px;
+    height: 200px;
+    top: -10px;
+    right: -80px;
+    background: var(--green-medium);
+}
+
+.top-light {
+    width: 140px;
+    height: 140px;
+    top: 40px;
+    right: -60px;
+    background: rgba(18, 175, 25, 0.3);
+}
+
+.bg-art-bottom {
+    left: 0;
+    bottom: 0;
+    width: 180px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.bottom-back {
+    width: 200px;
+    height: 200px;
+    left: -80px;
+    top: 30px;
+    background: var(--green-medium);
+}
+
+.bottom-middle {
+    width: 200px;
+    height: 200px;
+    left: -140px;
+    top: 100px;
+    background: var(--green-dark);
+}
+
+.bottom-front {
+    width: 180px;
+    height: 180px;
+    left: -30px;
+    bottom: -70px;
+    background: var(--green-light);
+}
+
+.bottom-detail {
+    width: 100px;
+    height: 100px;
+    left: -15px;
+    bottom: -5px;
+    background: rgba(10, 150, 18, 0.2);
+}
+
+.btn-remover {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-remover:hover {
+    background-color: #c62828;
+    color: #fff;
+    border-color: #c62828;
+}
+
+.btn-remover svg {
+    flex-shrink: 0;
+}

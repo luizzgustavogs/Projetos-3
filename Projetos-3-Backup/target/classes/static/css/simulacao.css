@@ -1,0 +1,299 @@
+/* =========================
+   SIMULAÇÃO LAYOUT 2 COLUNAS
+========================= */
+.simulacao-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+.sim-content {
+    flex: 1;
+    z-index: 10;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0px 40px 5px; /* Reduzido padding superior */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sim-header {
+    text-align: center;
+    margin-top: -15px; /* Sobe em direção à barra superior */
+    margin-bottom: 5px; /* Comprimido para caber na tela */
+}
+
+.sim-title {
+    font-size: 2rem;
+    color: #111;
+    font-weight: 800;
+}
+
+.sim-subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+.equiv-calc {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+/* Grade Principal: Terreno à Esquerda, Resultados à Direita */
+.main-layout {
+    display: flex;
+    align-items: stretch; /* Mudado para stretch para permitir alinhamento do slider no fundo */
+    gap: 20px;
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.terrain-side {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* Distância menor entre terreno e slider */
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+.terrain-container {
+    width: 100%;
+    max-width: 550px; /* Aumentado */
+    position: relative;
+}
+
+.arvore-svg {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.arvore-svg.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito de Árvore Caída (Piora) */
+.arvore-svg.fallen {
+    transform: rotate(65deg) translateY(15px) translateX(15px) !important;
+    opacity: 0.4 !important;
+    filter: grayscale(0.8) sepia(0.5);
+    transition: all 1s ease-out;
+}
+
+/* Animação de Fumaça para o Carro */
+@keyframes smokeMove {
+    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translate(-30px, -40px) scale(3); opacity: 0; }
+}
+
+.smoke-particle {
+    fill: #555;
+    opacity: 0;
+}
+
+.piorou .smoke-particle {
+    animation: smokeMove 1.5s infinite;
+}
+
+.piorou .equiv-icon-tree {
+    transform: scale(0.6);
+    filter: grayscale(1);
+    transition: all 0.5s ease;
+}
+
+.results-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Slider Centralizado na Base */
+.slider-section {
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 10px; /* Pequeno ajuste para alinhar com o card ESG */
+    background: rgba(255,255,255,0.6);
+    padding: 10px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+.slider-track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+input[type=range].sim-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+input[type=range].sim-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #23402A;
+    cursor: pointer;
+    margin-top: -10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+input[type=range].sim-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: #d3d3d3;
+    border-radius: 3px;
+}
+
+/* Grade de Cards Estilo Figma */
+.results-grid-figma {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.results-grid-figma.row-top {
+    grid-template-columns: repeat(2, 1fr);
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dark-card {
+    background: #1B3022;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px; /* Mais comprimido */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.piorou .dark-card { background: #D35400; }
+
+.dark-card .label {
+    font-size: 0.6rem;
+    color: #c8e6c9;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.piorou .dark-card .label { color: #ffd8b1; }
+
+.dark-card .value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.dark-card .sub-label {
+    font-size: 0.5rem;
+    opacity: 0.7;
+}
+
+/* Equivalências */
+.equiv-title {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    text-align: center;
+    color: #333;
+}
+
+.equiv-box-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    background: rgba(255,255,255,0.4);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.equiv-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+.equiv-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.equiv-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* Tabela Comparativa */
+.comparison-table-container {
+    margin: 5px auto 0; /* Centralizado e mais próximo dos de cima */
+    width: 90%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+}
+
+.comparison-table th {
+    background: #1B3022;
+    color: #fff;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.piorou .comparison-table th { background: #D35400; }
+
+.comparison-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.comparison-table tr:nth-child(even) { background: #fafafa; }
+
+/* Temas de Piora */
+.piorou .sim-title strong { color: #D35400; }
+.piorou .top-dark { background: #D35400; }
+.piorou .top-medium { background: #E67E22; }
+.piorou input[type=range].sim-slider::-webkit-slider-thumb { background: #D35400; }
+
+/* Fumaça Fábrica */
+.factory-smoke { animation: smokeFloat 2s infinite ease-out; }
+@keyframes smokeFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-40px) scale(2); opacity: 0; }
+}
+
+/* Fundo decorativo */
+.bg-art { position: fixed; pointer-events: none; z-index: 1; }
+.bg-circle { position: absolute; border-radius: 50%; }
+.bg-art-top { top: 0; right: 0; width: 300px; height: 200px; overflow: hidden; }
+.top-dark { width: 300px; height: 300px; top: -100px; right: -70px; background: var(--green-dark); }
+.top-medium { width: 200px; height: 200px; top: -10px; right: -80px; background: var(--green-medium); }
+.bg-art-bottom { left: 0; bottom: 0; width: 180px; height: 300px; overflow: hidden; }
+.bottom-back { width: 200px; height: 200px; left: -80px; top: 30px; background: var(--green-medium); }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto Atual - Edenred</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/impacto.css">
+
+    <style>
+        .impact-page { min-height: 100vh !important; height: auto !important; padding-bottom: 60px; display: flex; flex-direction: column; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 28px; z-index: 100; position: relative; }
+        .topbar-right { display: flex; gap: 12px; align-items: center; }
+        .topbar-right span { color: rgba(255,255,255,0.9) !important; font-weight: 600; }
+        .btn-logout-sm { padding: 6px 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.1); color: #fff; font-size: 0.8rem; font-weight: 600; text-decoration: none; }
+        
+        .empresa-info { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-radius: 16px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.3); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+        .info-item { background: var(--bg); padding: 8px; border-radius: 10px; text-align: center; }
+        .info-label { font-size: 0.65rem; color: #888; text-transform: uppercase; margin-bottom: 2px; }
+        .info-value { font-size: 1.1rem; font-weight: 800; color: var(--green-dark); }
+
+        /* Sinalização de Condição Ruim */
+        .condicao-ruim .result-card { background: linear-gradient(135deg, #E65100 0%, #FB8C00 100%) !important; }
+        .condicao-ruim .card-label { color: #fff3e0 !important; }
+        .condicao-ruim .card-subtext { color: #ffe0b2 !important; }
+        
+        .alert-banner { background: #fff3e0; color: #e65100; padding: 8px; border-radius: 10px; margin: 0 auto 10px; max-width: 550px; font-size: 0.8rem; font-weight: 700; text-align: center; border: 1px solid #ffe0b2; display: none; }
+    </style>
+</head>
+<body>
+<main class="impact-page">
+    <header class="topbar">
+        <a href="/" class="brand" style="font-size: 2.2rem;">Eden</a>
+        <div class="topbar-right">
+            <span style="font-size: 0.8rem; color: #666;" th:text="${nomeEmpresa}">Empresa</span>
+            <a href="/logout" class="btn-logout-sm">Sair</a>
+        </div>
+    </header>
+
+    <section class="form-section" id="impacto-container">
+        <div id="alert-banner" class="alert-banner">⚠️ Nível de digitalização baixo! Sua empresa possui um impacto ambiental elevado.</div>
+        
+        <div class="form-header">
+            <h1 class="title">Impacto ambiental <span>atual</span></h1>
+            <p class="subtitle">Baseado no seu nível digital de <strong id="txt-digital">0%</strong></p>
+        </div>
+
+        <div class="empresa-info">
+            <div class="info-grid">
+                <div class="info-item"><p class="info-label">Colaboradores</p><p class="info-value" th:text="${colaboradores}">0</p></div>
+                <div class="info-item"><p class="info-label">Benefícios</p><p class="info-value" th:text="${numeroBeneficios}">0</p></div>
+                <div class="info-item"><p class="info-label">Tipo</p><p class="info-value" th:text="${multibeneficio ? 'Multi' : 'Separado'}">-</p></div>
+                <div class="info-item"><p class="info-label">Total Cartões</p><p class="info-value" th:text="${totalCartoes}">0</p></div>
+            </div>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card"><p class="card-label">CO₂ Emitido</p><h2 class="card-value" id="res-co2">...</h2><p class="card-subtext">por ciclo de vida</p></div>
+            <div class="result-card"><p class="card-label">Plástico</p><h2 class="value card-value" id="res-plastico" style="color:white">...</h2><p class="card-subtext">em cartões físicos</p></div>
+        </div>
+
+        <div class="actions" style="margin-top: 32px; text-align: center;">
+            <a href="/simulacao" class="btn btn-dark" style="background:#23402A; padding: 14px 36px; border-radius:50px; color:white; text-decoration:none; font-weight:700;">SIMULAR MELHORIAS</a>
+        </div>
+    </section>
+
+    <div class="bg-art bg-art-top" aria-hidden="true">
+        <div class="bg-circle top-dark"></div>
+        <div class="bg-circle top-medium"></div>
+        <div class="bg-circle top-light"></div>
+    </div>
+</main>
+
+<script>
+    async function calcularImpacto() {
+        try {
+            const resposta = await fetch('/calcular-ajax', { method: 'POST' });
+            if (resposta.ok) {
+                const dados = await resposta.json();
+                
+                document.getElementById('res-co2').textContent = dados.co2;
+                document.getElementById('res-plastico').textContent = dados.plastico;
+                document.getElementById('txt-digital').textContent = dados.digitalAtual + "%";
+
+                if (dados.condicaoRuim === "true") {
+                    document.getElementById('impacto-container').classList.add('condicao-ruim');
+                    document.getElementById('alert-banner').style.display = 'block';
+                }
+            }
+        } catch (error) { console.error(error); }
+    }
+    calcularImpacto();
+</script>
+</body>
+</html>
