@@ -1,8 +1,8 @@
 package com.projetos3.edenred.controller;
 
-import com.projetos3.edenred.dados.BancoEmMemoria;
 import com.projetos3.edenred.model.Empresa;
 import com.projetos3.edenred.model.DadosEmpresaException;
+import com.projetos3.edenred.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +12,12 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
+
+    private final LoginService loginService;
+
+    public LoginController(LoginService loginService) {
+        this.loginService = loginService;
+    }
 
     @GetMapping("/login")
     public String telaLogin(HttpSession session) {
@@ -31,7 +37,7 @@ public class LoginController {
                              Model model) {
 
         // Primeiro verifica se é o admin Edenred
-        if (BancoEmMemoria.autenticarAdmin(cnpj, senha)) {
+        if (loginService.autenticarAdmin(cnpj, senha)) {
             session.setAttribute("admin", true);
             session.setAttribute("empresaLogada", null);
             return "redirect:/admin";
@@ -39,7 +45,7 @@ public class LoginController {
 
         // Se não é admin, tenta autenticar como empresa
         try {
-            Empresa empresa = BancoEmMemoria.autenticar(cnpj, senha);
+            Empresa empresa = loginService.autenticarEmpresa(cnpj, senha);
             session.setAttribute("empresaLogada", empresa);
             session.setAttribute("admin", false);
             return "redirect:/impacto";
