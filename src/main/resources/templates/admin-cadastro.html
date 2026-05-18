@@ -21,6 +21,12 @@
         <div class="home-bg-circle home-left-mid-detail"></div>
     </div>
 
+    <div class="home-bg-art home-bg-art-left-side" aria-hidden="true">
+        <div class="home-bg-circle home-left-mid-back"></div>
+        <div class="home-bg-circle home-left-mid-front"></div>
+        <div class="home-bg-circle home-left-mid-detail"></div>
+    </div>
+
     <header class="topbar">
         <a href="/admin" class="brand brand-logo" aria-label="Eden">
             <img src="/images/eden-logo.png" alt="Eden">
@@ -32,7 +38,7 @@
     </header>
 
     <section class="admin-content">
-        <a href="/admin" class="link-voltar-admin">← Voltar para o painel</a>
+        <a href="/admin" class="link-voltar-admin">&lt; Voltar para o painel</a>
 
         <h1 class="admin-title">Cadastrar <strong>Empresa</strong></h1>
         <p class="admin-subtitle">Preencha os dados da empresa cliente para habilitar o acesso à calculadora de impacto.</p>
@@ -83,12 +89,12 @@
             <div class="form-row">
                 <div class="form-field">
                     <label for="transacoesMensais">Transações mensais por colaborador</label>
-                    <input type="number" id="transacoesMensais" name="transacoesMensais" min="1" max="50" placeholder="13" required>
+                    <input type="number" id="transacoesMensais" name="transacoesMensais" min="1" max="50" value="13" required>
                     <span class="hint">Média de uso do cartão por mês (sugestão: 10 a 22)</span>
                 </div>
                 <div class="form-field">
                     <label for="vidaUtilCartaoAnos">Vida útil do cartão (anos)</label>
-                    <input type="number" id="vidaUtilCartaoAnos" name="vidaUtilCartaoAnos" min="0.5" max="10" step="0.5" placeholder="3.5" required>
+                    <input type="number" id="vidaUtilCartaoAnos" name="vidaUtilCartaoAnos" min="0.5" max="10" step="0.5" value="3.5" required>
                 </div>
             </div>
 
@@ -97,14 +103,14 @@
             <div class="form-row">
                 <div class="form-field">
                     <label for="taxaTurnover">Taxa de turnover anual</label>
-                    <input type="number" id="taxaTurnover" name="taxaTurnover" min="0" max="1" step="0.01" placeholder="0.20" required>
+                    <input type="number" id="taxaTurnover" name="taxaTurnover" min="0" max="1" step="0.01" value="0.20" required>
                     <span class="hint">Ex: 0.20 = 20% dos colaboradores saem por ano</span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-field">
                     <label for="taxaReemissao">Taxa de reemissão anual</label>
-                    <input type="number" id="taxaReemissao" name="taxaReemissao" min="0" max="1" step="0.01" placeholder="0.05" required>
+                    <input type="number" id="taxaReemissao" name="taxaReemissao" min="0" max="1" step="0.01" value="0.05" required>
                     <span class="hint">Ex: 0.05 = 5% de 2ª via</span>
                 </div>
                 <div class="form-field">
@@ -114,7 +120,9 @@
                 </div>
             </div>
 
-            <button type="submit" class="admin-submit">Cadastrar Empresa</button>
+            <div class="cadastrar-cta">
+                <button type="submit" class="btn-cadastrar">CADASTRAR EMPRESA</button>
+            </div>
         </form>
     </section>
 </main>

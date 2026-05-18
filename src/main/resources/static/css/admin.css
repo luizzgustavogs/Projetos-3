@@ -111,17 +111,18 @@
 
 /* Formulário de Cadastro Compacto */
 .admin-form {
-    padding: var(--space-2xl);
     margin-bottom: var(--space-4xl);
 }
 
 .admin-form .section-title {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    color: var(--green-dark);
+    color: var(--eden-body-text);
     margin-bottom: var(--space-lg);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+}
+
+.admin-form .section-title:not(:first-of-type) {
+    margin-top: var(--space-subtitle-content);
 }
 
 .form-row {
@@ -134,33 +135,67 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
 }
 
 .form-field label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--muted);
-}
-
-.form-field input,
-.form-field select {
-    padding: var(--space-md) var(--space-lg);
-    border-radius: 30px;
-    border: 1px solid var(--color-border);
-    background: var(--bg);
-    outline: none;
-    color: var(--text);
+    display: block;
     font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--eden-body-text);
 }
 
-.form-field input:focus {
-    border-color: var(--green-dark);
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="password"],
+.form-field select {
+    width: 100%;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: 30px;
+    border: 1px solid var(--color-primary-action);
+    background: var(--white);
+    outline: none;
+    color: var(--eden-body-text);
+    font-size: 0.95rem;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: var(--color-highlight-green);
+}
+
+.form-field input[type="text"]:not(:placeholder-shown),
+.form-field input[type="number"]:not(:placeholder-shown),
+.form-field input[type="password"]:not(:placeholder-shown) {
+    background: var(--color-forest-soft-text);
+}
+
+.form-field input:-webkit-autofill,
+.form-field input:-webkit-autofill:hover,
+.form-field input:-webkit-autofill:focus {
+    border-color: var(--color-highlight-green);
+    -webkit-text-fill-color: var(--eden-body-text);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-forest-soft-text) inset;
+    box-shadow: 0 0 0 1000px var(--color-forest-soft-text) inset;
 }
 
 .form-field .hint {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
     font-size: 0.7rem;
-    color: var(--color-muted-light);
+    color: var(--color-muted);
+}
+
+.form-field .hint::before {
+    content: "ⓘ";
+    color: var(--color-icon-info);
+    font-size: 0.75rem;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 /* Checkbox */
@@ -169,24 +204,6 @@
     align-items: center;
     gap: var(--space-sm) !important;
     margin-top: var(--space-xl);
-}
-
-.admin-submit {
-    width: 100%;
-    padding: var(--space-md);
-    border: none;
-    border-radius: 30px;
-    background: var(--green-dark);
-    color: var(--white);
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.admin-submit:hover {
-    background: var(--color-green-hover);
-    transform: translateY(-2px);
 }
 
 /* Tabela Elegante */
@@ -317,7 +334,7 @@
 }
 
 .section-block-info .info-icon {
-    color: var(--color-primary-action);
+    color: var(--color-icon-info);
     font-size: 0.8rem;
     line-height: 1;
     flex-shrink: 0;
@@ -462,7 +479,7 @@
 .cadastrar-cta {
     display: flex;
     justify-content: center;
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-subtitle-content);
 }
 
 .btn-cadastrar {
@@ -470,7 +487,10 @@
     background: var(--color-primary-action);
     color: var(--white);
     border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
     text-decoration: none;
+    font-family: var(--font-sans);
     font-size: 0.85rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -519,7 +539,8 @@
     color: var(--color-primary-action);
     text-decoration: none;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 400;
+    text-transform: uppercase;
     margin-bottom: var(--space-lg);
 }
 
