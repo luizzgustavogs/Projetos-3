@@ -18,7 +18,9 @@
 <main class="home-page">
     <header class="home-topbar">
         <div class="topbar-content">
-            <a href="#topo" class="home-brand" aria-label="Projeto Eden">Eden</a>
+            <a href="#topo" class="home-brand" aria-label="Projeto Eden">
+                <img src="/images/eden-logo.png" alt="Eden">
+            </a>
 
             <nav class="home-nav" aria-label="Navegação principal">
                 <a href="#por-que">Por que mudar</a>
@@ -31,10 +33,8 @@
 
     <section id="topo" class="hero">
         <div class="hero-copy">
-            <p class="eyebrow">Projeto Eden · Edenred</p>
-
             <h1 class="home-title">
-                Um novo jardim para os <span>benefícios digitais</span>.
+                Um novo jardim para os <span>benefícios digitais</span>
             </h1>
 
             <p class="description">
@@ -44,8 +44,8 @@
             </p>
 
             <div class="home-actions">
-                <a href="#calculadora" class="home-btn home-btn-primary">Calcular impacto</a>
-                <a href="#por-que" class="home-btn home-btn-secondary">Entender a solução</a>
+                <a href="#calculadora" class="home-btn home-btn-primary">CALCULAR IMPACTO</a>
+                <a href="#por-que" class="home-btn home-btn-secondary">ENTENDER A SOLUÇÃO</a>
             </div>
         </div>
 
@@ -86,8 +86,8 @@
 
     <section id="por-que" class="section">
         <div class="section-heading">
-            <p class="section-kicker">Por que gestores devem agir agora</p>
-            <h2 class="section-title">Cartões físicos parecem pequenos, mas a operação por trás deles é grande.</h2>
+            <p class="section-kicker">Por que gestores devem agir agora<span class="question-mark">?</span></p>
+            <h2 class="section-title">Cartões físicos parecem pequenos, mas a <span>operação por trás</span> deles é grande</h2>
             <p class="section-text">
                 Emissão, personalização, envelopes, transporte, reentrega, segunda via,
                 troca por perda, vencimento e descarte. O Projeto Eden traduz essa cadeia
@@ -129,30 +129,37 @@
         <div class="calculator-preview">
             <div>
                 <p class="section-kicker">Calculadora Eden</p>
-                <h2>Mostre o impacto ambiental da decisão em poucos segundos.</h2>
+                <h2>Mostre o impacto ambiental da decisão em poucos segundos</h2>
                 <p>
                     O gestor informa o número de colaboradores, quantos cartões físicos são
-                    usados hoje por pessoa e qual será o cenário digital futuro:
-                    multibenefícios ou híbrido. A ferramenta calcula cartões evitados,
+                    usados hoje por pessoa e escolhe uma meta de digitalização em percentual.
+                    A ferramenta calcula cartões evitados,
                     plástico reduzido e CO₂e estimado.
                 </p>
                 <div class="home-actions">
-                    <a href="/impacto" class="home-btn home-btn-primary">Abrir calculadora</a>
+                    <a href="/impacto" class="home-btn home-btn-inverse">ABRIR CALCULADORA</a>
                 </div>
             </div>
 
-            <div class="calc-box" aria-label="Prévia da calculadora">
-                <div class="field-row">
-                    <label>Colaboradores</label>
-                    <div class="fake-input">1.000</div>
+            <div class="calc-box" aria-label="Exemplo de cálculo da calculadora">
+                <div class="scenario-header">
+                    <span>Exemplo de cenário</span>
+                    <strong>Meta: 100% digital</strong>
                 </div>
-                <div class="field-row">
-                    <label>Cartões físicos atuais por colaborador</label>
-                    <div class="fake-input">4</div>
-                </div>
-                <div class="field-row">
-                    <label>Cartões físicos no cenário futuro</label>
-                    <div class="fake-input">0</div>
+
+                <div class="scenario-list">
+                    <div class="scenario-row">
+                        <span>Colaboradores</span>
+                        <strong>1.000</strong>
+                    </div>
+                    <div class="scenario-row">
+                        <span>Cartões físicos por colaborador</span>
+                        <strong>4</strong>
+                    </div>
+                    <div class="scenario-row">
+                        <span>Cartões físicos no cenário digital</span>
+                        <strong>0</strong>
+                    </div>
                 </div>
 
                 <div class="result-strip">
@@ -176,7 +183,7 @@
     <section id="como-funciona" class="section">
         <div class="section-heading">
             <p class="section-kicker">Jornada de adoção</p>
-            <h2 class="section-title">Do cartão físico ao ecossistema digital.</h2>
+            <h2 class="section-title">Do cartão físico ao <span>ecossistema digital</span></h2>
             <p class="section-text">
                 A proposta não é apenas trocar um meio de pagamento. É criar uma jornada
                 progressiva para reduzir dependência de plástico, melhorar a operação e
@@ -207,7 +214,7 @@
     <section id="fontes" class="section">
         <div class="section-heading">
             <p class="section-kicker">Transparência</p>
-            <h2 class="section-title">A origem dos dados e métricas utilizadas.</h2>
+            <h2 class="section-title">A origem dos <span>dados e métricas</span> utilizadas</h2>
             <p class="section-text">
                 Todos os cálculos baseiam-se em referências da indústria para garantir a precisão do impacto reportado e fortalecer sua comunicação ESG.
             </p>
@@ -246,7 +253,7 @@
             Com o Projeto Eden, cada gestor consegue visualizar o impacto de reduzir cartões
             físicos e acelerar a adoção de transações eletrônicas na empresa.
         </p>
-        <a href="/impacto" class="home-btn">Começar agora</a>
+        <a href="/impacto" class="home-btn">COMEÇAR AGORA</a>
     </section>
 
     <div class="home-bg-art home-bg-art-top" aria-hidden="true">
@@ -260,6 +267,25 @@
         <div class="home-bg-circle home-bottom-middle"></div>
         <div class="home-bg-circle home-bottom-front"></div>
         <div class="home-bg-circle home-bottom-detail"></div>
+    </div>
+
+    <div class="home-bg-art home-bg-art-bottom-2" aria-hidden="true">
+        <div class="home-bg-circle home-bottom-2-back"></div>
+        <div class="home-bg-circle home-bottom-2-middle"></div>
+        <div class="home-bg-circle home-bottom-2-front"></div>
+        <div class="home-bg-circle home-bottom-2-detail"></div>
+    </div>
+
+    <div class="home-bg-art home-bg-art-left-mid" aria-hidden="true">
+        <div class="home-bg-circle home-left-mid-back"></div>
+        <div class="home-bg-circle home-left-mid-front"></div>
+        <div class="home-bg-circle home-left-mid-detail"></div>
+    </div>
+
+    <div class="home-bg-art home-bg-art-mid" aria-hidden="true">
+        <div class="home-bg-circle home-mid-back"></div>
+        <div class="home-bg-circle home-mid-front"></div>
+        <div class="home-bg-circle home-mid-detail"></div>
     </div>
 </main>
 

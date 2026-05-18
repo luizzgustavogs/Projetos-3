@@ -60,7 +60,7 @@
     background: var(--white);
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-card);
     border-left: 5px solid var(--green-dark);
 }
 
@@ -81,13 +81,13 @@
 
 /* Formulário de Cadastro Compacto */
 .admin-form {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--color-surface-soft);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-panel);
     margin-bottom: 30px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid var(--color-overlay-white-border);
 }
 
 .admin-form .section-title {
@@ -122,7 +122,7 @@
 .form-field select {
     padding: 10px 16px;
     border-radius: 30px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     background: var(--bg);
     outline: none;
     color: var(--text);
@@ -135,7 +135,7 @@
 
 .form-field .hint {
     font-size: 0.7rem;
-    color: #999;
+    color: var(--color-muted-light);
 }
 
 /* Checkbox */
@@ -160,24 +160,24 @@
 }
 
 .admin-submit:hover {
-    background: #006a08;
+    background: var(--color-green-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 129, 10, 0.2);
+    box-shadow: var(--shadow-green-soft);
 }
 
 /* Tabela Elegante */
 .empresas-table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(255,255,255,0.7);
+    background: var(--color-surface-muted);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-card);
 }
 
 .empresas-table th {
-    background: #23402A;
-    color: #fff;
+    background: var(--color-forest);
+    color: var(--white);
     padding: 12px;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -187,7 +187,7 @@
 .empresas-table td {
     padding: 10px 12px;
     font-size: 0.8rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 /* =========================
@@ -233,7 +233,7 @@
     height: 140px;
     top: 40px;
     right: -60px;
-    background: rgba(18, 175, 25, 0.3);
+    background: var(--color-overlay-green-light-soft);
 }
 
 .bg-art-bottom {
@@ -273,7 +273,7 @@
     height: 100px;
     left: -15px;
     bottom: -5px;
-    background: rgba(10, 150, 18, 0.2);
+    background: var(--color-overlay-green-detail-soft);
 }
 
 .btn-remover {
@@ -281,9 +281,9 @@
     align-items: center;
     gap: 6px;
     padding: 6px 12px;
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #ffcdd2;
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger-border);
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -292,9 +292,9 @@
 }
 
 .btn-remover:hover {
-    background-color: #c62828;
-    color: #fff;
-    border-color: #c62828;
+    background-color: var(--color-danger);
+    color: var(--white);
+    border-color: var(--color-danger);
 }
 
 .btn-remover svg {

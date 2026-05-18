@@ -28,18 +28,18 @@
 
 .sim-title {
     font-size: 2rem;
-    color: #111;
+    color: var(--text);
     font-weight: 800;
 }
 
 .sim-subtitle {
     font-size: 1rem;
-    color: #666;
+    color: var(--muted);
 }
 
 .equiv-calc {
     font-size: 0.7rem;
-    color: #888;
+    color: var(--color-muted-soft);
     margin-top: 2px;
     font-weight: 500;
 }
@@ -96,7 +96,7 @@
 }
 
 .smoke-particle {
-    fill: #555;
+    fill: var(--color-muted);
     opacity: 0;
 }
 
@@ -122,7 +122,7 @@
     width: 100%;
     max-width: 480px;
     margin-bottom: 10px; /* Pequeno ajuste para alinhar com o card ESG */
-    background: rgba(255,255,255,0.6);
+    background: var(--color-overlay-white-60);
     padding: 10px 25px;
     border-radius: 50px;
     backdrop-filter: blur(5px);
@@ -147,16 +147,16 @@ input[type=range].sim-slider::-webkit-slider-thumb {
     height: 24px;
     width: 24px;
     border-radius: 50%;
-    background: #23402A;
+    background: var(--color-forest);
     cursor: pointer;
     margin-top: -10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-thumb);
 }
 input[type=range].sim-slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 6px;
     cursor: pointer;
-    background: #d3d3d3;
+    background: var(--color-border);
     border-radius: 3px;
 }
 
@@ -176,24 +176,24 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
 }
 
 .dark-card {
-    background: #1B3022;
-    color: #fff;
+    background: var(--color-forest-deep);
+    color: var(--white);
     border-radius: 8px;
     padding: 8px; /* Mais comprimido */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-table);
     text-align: center;
 }
 
-.piorou .dark-card { background: #D35400; }
+.piorou .dark-card { background: var(--color-warning); }
 
 .dark-card .label {
     font-size: 0.6rem;
-    color: #c8e6c9;
+    color: var(--color-success-border);
     margin-bottom: 3px;
     font-weight: 600;
 }
 
-.piorou .dark-card .label { color: #ffd8b1; }
+.piorou .dark-card .label { color: var(--color-warning-label); }
 
 .dark-card .value {
     font-size: 1.2rem;
@@ -211,7 +211,7 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
     font-size: 0.8rem;
     margin: 5px 0;
     text-align: center;
-    color: #333;
+    color: var(--eden-text);
 }
 
 .equiv-box-stacked {
@@ -220,7 +220,7 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
     align-items: center;
     gap: 8px;
     margin-bottom: 5px;
-    background: rgba(255,255,255,0.4);
+    background: var(--color-overlay-white-40);
     padding: 10px;
     border-radius: 8px;
 }
@@ -236,7 +236,7 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
 .equiv-text {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #333;
+    color: var(--eden-text);
 }
 
 .equiv-icon {
@@ -248,10 +248,10 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
 .comparison-table-container {
     margin: 5px auto 0; /* Centralizado e mais próximo dos de cima */
     width: 90%;
-    background: #fff;
+    background: var(--white);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-table);
 }
 
 .comparison-table {
@@ -261,26 +261,26 @@ input[type=range].sim-slider::-webkit-slider-runnable-track {
 }
 
 .comparison-table th {
-    background: #1B3022;
-    color: #fff;
+    background: var(--color-forest-deep);
+    color: var(--white);
     padding: 6px 10px;
     text-align: left;
 }
 
-.piorou .comparison-table th { background: #D35400; }
+.piorou .comparison-table th { background: var(--color-warning); }
 
 .comparison-table td {
     padding: 6px 10px;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
-.comparison-table tr:nth-child(even) { background: #fafafa; }
+.comparison-table tr:nth-child(even) { background: var(--color-row); }
 
 /* Temas de Piora */
-.piorou .sim-title strong { color: #D35400; }
-.piorou .top-dark { background: #D35400; }
-.piorou .top-medium { background: #E67E22; }
-.piorou input[type=range].sim-slider::-webkit-slider-thumb { background: #D35400; }
+.piorou .sim-title strong { color: var(--color-warning); }
+.piorou .top-dark { background: var(--color-warning); }
+.piorou .top-medium { background: var(--color-warning-light); }
+.piorou input[type=range].sim-slider::-webkit-slider-thumb { background: var(--color-warning); }
 
 /* Fumaça Fábrica */
 .factory-smoke { animation: smokeFloat 2s infinite ease-out; }

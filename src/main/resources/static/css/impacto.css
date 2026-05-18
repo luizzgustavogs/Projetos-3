@@ -92,7 +92,7 @@
 .input-box input {
     padding: 12px 20px;
     border-radius: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border-strong);
     background: transparent;
     outline: none;
     color: var(--text);
@@ -136,7 +136,7 @@
 .pill {
     padding: 8px 16px;
     border-radius: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border-strong);
     background: transparent;
     color: var(--muted);
     font-size: 0.8rem;
@@ -153,7 +153,7 @@
 .pill.selecionada {
     background-color: var(--green-dark);
     border-color: var(--green-dark);
-    color: white;
+    color: var(--white);
 }
 
 .pill-add {
@@ -215,7 +215,7 @@
     height: 170px;
     top: 47px;
     right: -78px;
-    background: rgba(18, 175, 25, 0.42);
+    background: var(--color-overlay-green-light);
 }
 
 /* inferior esquerdo */
@@ -256,7 +256,7 @@
     height: 135px;
     left: -18px;
     bottom: -8px;
-    background: rgba(10, 150, 18, 0.38);
+    background: var(--color-overlay-green-detail);
 }
 
 /* =========================
@@ -274,16 +274,16 @@
 
 .mensagem-alerta.erro {
     display: block;
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #ffcdd2;
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger-border);
 }
 
 .mensagem-alerta.sucesso {
     display: block;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #c8e6c9;
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+    border: 1px solid var(--color-success-border);
 }
 
 /* =========================
@@ -297,14 +297,14 @@
 }
 
 .result-card {
-    background-color: #23402A;
-    color: white;
+    background-color: var(--color-forest);
+    color: var(--white);
     border-radius: 12px;
     padding: 16px 15px; /* Reduzido de 24px 20px */
     text-align: center;
     flex: 1;
     min-width: 180px;
-    box-shadow: 0 4px 15px rgba(35, 64, 42, 0.15);
+    box-shadow: var(--shadow-forest);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,7 +314,7 @@
     font-size: 0.85rem;
     margin-bottom: 8px; /* Reduzido de 16px */
     font-weight: 400;
-    color: #E0E6E2;
+    color: var(--color-forest-label);
 }
 
 .result-card .card-value {
@@ -327,14 +327,14 @@
 .result-card .card-subtext {
     font-size: 0.8rem;
     font-weight: 300;
-    color: #A9BBAF;
+    color: var(--color-forest-muted);
 }
 
 /* Novo botão escuro do design */
 .btn-dark {
-    background-color: #23402A;
-    color: #ffffff;
-    box-shadow: 0 4px 6px rgba(35, 64, 42, 0.2);
+    background-color: var(--color-forest);
+    color: var(--white);
+    box-shadow: var(--shadow-forest-button);
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
@@ -347,7 +347,7 @@
 }
 
 .btn-dark:hover {
-    background-color: #1a3020;
+    background-color: var(--color-forest-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(35, 64, 42, 0.3);
+    box-shadow: var(--shadow-forest-hover);
 }

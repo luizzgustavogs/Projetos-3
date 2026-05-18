@@ -1,26 +1,15 @@
+@import url("/css/tokens.css");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --bg: #f3f3f3;
-    --text: #111111;
-    --muted: #5c5c5c;
-
-    --green-dark: #00810a;
-    --green-medium: #08a60d;
-    --green-light: #0bb80f;
-    --green-detail: #1e8f24;
-
-    --white: #ffffff;
-}
-
 html, body {
     width: 100%;
     min-height: 100vh;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
@@ -77,10 +66,10 @@ select {
 .btn {
     display: inline-block;
     padding: 14px 32px;
-    border-radius: 50px;
+    border-radius: var(--radius-button);
     font-weight: 700;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     cursor: pointer;
     text-decoration: none;
     border: none;
@@ -88,28 +77,28 @@ select {
 
 .btn-primary {
     background: var(--green-dark);
-    color: white !important;
+    color: var(--white) !important;
 }
 
 .btn-primary:hover {
     background: var(--green-medium);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 129, 10, 0.3);
+    box-shadow: var(--shadow-green);
 }
 
 .btn-dark {
-    background: #23402A;
-    color: white !important;
+    background: var(--color-forest);
+    color: var(--white) !important;
 }
 
 .btn-dark:hover {
-    background: #1a3020;
+    background: var(--color-forest-dark);
     transform: translateY(-2px);
 }
 
 .btn-login-sm {
     padding: 8px 20px;
-    border-radius: 20px;
+    border-radius: var(--radius-button);
     border: 1.5px solid var(--green-dark);
     color: var(--green-dark) !important;
     font-weight: 700;
@@ -118,5 +107,5 @@ select {
 
 .btn-login-sm:hover {
     background: var(--green-dark);
-    color: white !important;
+    color: var(--white) !important;
 }
