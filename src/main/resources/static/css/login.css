@@ -24,7 +24,7 @@
 
 .login-header {
     text-align: center;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-subtitle-action);
 }
 
 .login-page .login-header .brand {
@@ -34,7 +34,7 @@
     letter-spacing: -0.04em;
     color: var(--color-primary-action) !important;
     display: block;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-title-subtitle-less);
 }
 
 .login-page .login-header .subtitle {
@@ -47,12 +47,16 @@
 .login-form {
     background: transparent;
     border-radius: 0;
-    padding: var(--space-md) var(--space-4xl) 0;
+    padding: 0 var(--space-4xl);
     box-shadow: var(--shadow-none);
 }
 
 .login-form .form-group {
     margin-bottom: var(--space-xl);
+}
+
+.login-form .form-group:last-of-type {
+    margin-bottom: 0;
 }
 
 .login-form label {
@@ -110,7 +114,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: var(--space-sm);
+    margin-top: var(--space-subtitle-action);
     box-shadow: var(--shadow-none);
 }
 
@@ -255,7 +259,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-2xl);
 }
 
 .admin-divider::before,
@@ -290,7 +294,7 @@
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease;
     box-shadow: var(--shadow-none);
 }
 

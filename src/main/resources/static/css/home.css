@@ -86,7 +86,7 @@ body.home-body {
 
 .home-title {
     margin: 0;
-    font-size: clamp(2.7rem, 7vw, 5.9rem);
+    font-size: clamp(2.7rem, 7vw, 5rem);
     line-height: 0.94;
     letter-spacing: var(--letter-spacing-heading);
     font-weight: 700;
@@ -101,7 +101,7 @@ body.home-body {
 
 .description {
     max-width: 650px;
-    margin: var(--space-3xl) 0 0;
+    margin: var(--space-title-subtitle) 0 0;
     font-size: 1.12rem;
     line-height: 1.7;
     color: var(--eden-body-text);
@@ -112,7 +112,7 @@ body.home-body {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-lg);
-    margin-top: 36px;
+    margin-top: var(--space-subtitle-action);
 }
 
 .home-btn {
@@ -126,7 +126,7 @@ body.home-body {
     font-size: 0.95rem;
     text-transform: uppercase;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .home-btn:hover {
@@ -248,7 +248,7 @@ body.home-body {
     z-index: var(--z-content);
     width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
-    padding: 88px 0;
+    padding: 64px 0;
 }
 
 .section-heading {

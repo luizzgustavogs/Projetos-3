@@ -127,6 +127,7 @@
     font-size: var(--text-page-title);
     color: var(--color-primary-action);
     font-weight: 400;
+    margin-bottom: var(--space-title-subtitle);
 }
 
 .sim-title strong {

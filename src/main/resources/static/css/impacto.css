@@ -149,7 +149,7 @@
     font-size: var(--text-page-title);
     font-weight: 500;
     color: var(--color-impact-title);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-title-subtitle);
 }
 
 .form-header .title span {
