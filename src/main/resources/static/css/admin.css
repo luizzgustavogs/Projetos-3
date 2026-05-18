@@ -49,13 +49,13 @@
     line-height: 1;
     letter-spacing: -0.04em;
     color: var(--color-primary-action);
-    margin-bottom: var(--space-title-subtitle);
+    margin-bottom: var(--space-title-subtitle-less);
 }
 
 .admin-subtitle {
     font-size: 0.9rem;
     color: var(--eden-body-text);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-subtitle-content);
 }
 
 /* Resumo do Dashboard */

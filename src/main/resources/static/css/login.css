@@ -24,7 +24,7 @@
 
 .login-header {
     text-align: center;
-    margin-bottom: var(--space-subtitle-action);
+    margin-bottom: var(--space-subtitle-content);
 }
 
 .login-page .login-header .brand {
@@ -114,7 +114,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: var(--space-subtitle-action);
+    margin-top: var(--space-subtitle-content);
     box-shadow: var(--shadow-none);
 }
 

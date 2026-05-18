@@ -2,20 +2,45 @@
 .impact-page {
     position: relative;
     width: 100%;
-    /* Mude para isso: */
-    min-height: 100vh !important; 
-    height: auto !important; 
-    overflow-y: visible !important; 
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: visible !important;
     overflow-x: hidden;
+    padding-bottom: 60px;
     display: block !important;
 }
 .topbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    padding: var(--space-2xl) var(--space-3xl);
+    padding: var(--space-lg) var(--space-3xl);
     z-index: var(--z-elevated);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-right {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.topbar-right span {
+    color: var(--color-primary-action) !important;
+    font-weight: 600;
+}
+
+.btn-logout-sm {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-primary-action);
+    background: transparent;
+    color: var(--color-primary-action);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .brand {
@@ -26,103 +51,72 @@
     color: var(--text);
 }
 
-.brand-logo {
-    display: inline-flex;
-    align-items: center;
-    width: 113px;
-    height: auto;
-}
-
-.brand-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
 /* =========================
-   BREADCRUMB DE ETAPAS
+   EMPRESA INFO
 ========================= */
-.progress-breadcrumb {
-    position: relative;
-    z-index: var(--z-content);
-    width: min(860px, calc(100% - 48px));
-    margin: 44px auto 44px;
+.empresa-info {
+    margin-bottom: var(--space-3xl);
 }
 
-.progress-steps {
+.info-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-md);
 }
 
-.progress-step {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    min-width: 0;
-    color: var(--color-progress-next);
+.info-item {
+    background: transparent;
+    padding: var(--space-lg);
+    border: 1.5px solid var(--color-primary-action);
+    border-radius: 22px;
     text-align: center;
 }
 
-.progress-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 14px;
-    left: calc(50% + 24px);
-    width: calc(100% - 48px);
-    border-top: 2px dashed var(--color-progress-line-next);
+.info-label {
+    font-size: 0.7rem;
+    color: var(--color-card-body-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
 }
 
-.progress-step-done:not(:last-child)::after {
-    border-top-style: solid;
-    border-top-color: var(--color-progress-done);
-}
-
-.progress-marker {
-    position: relative;
-    z-index: var(--z-base);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--color-progress-next);
-    color: var(--white);
-    font-size: 1rem;
+.info-value {
+    font-size: 1.25rem;
     font-weight: 800;
-    line-height: 1;
+    color: var(--color-highlight-green);
 }
 
-.progress-label {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.25;
+/* =========================
+   ESTADOS (condição ruim)
+========================= */
+.condicao-ruim .result-card { background: var(--color-impact-card-low) !important; }
+.condicao-ruim .card-label { color: var(--color-impact-low-label) !important; }
+.condicao-ruim .card-subtext { color: var(--color-impact-low-muted) !important; }
+
+/* =========================
+   ALERT BANNER
+========================= */
+.alert-banner {
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: 14px;
+    margin: var(--space-lg) auto 0;
+    width: 100%;
+    max-width: 760px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    display: none;
 }
 
-.progress-step-active {
-    color: var(--color-progress-active);
+.alert-banner.alert-good {
+    background: var(--color-impact-alert-high-bg);
+    color: var(--color-primary-action);
 }
 
-.progress-step-active .progress-marker {
-    background: var(--color-progress-active);
-}
-
-.progress-step-done {
-    color: var(--color-progress-done);
-}
-
-.progress-step-done .progress-marker {
-    background: var(--color-progress-done);
-}
-
-.progress-step-next {
-    color: var(--color-progress-next);
+.alert-banner.alert-bad {
+    background: var(--color-impact-alert-low-bg);
+    color: var(--color-impact-alert-low-text);
 }
 
 /* =========================
@@ -142,14 +136,14 @@
 
 .form-header {
     text-align: center;
-    margin-bottom: var(--space-xl); /* Metade do original */
+    margin-bottom: var(--space-subtitle-content); /* Metade do original */
 }
 
 .form-header .title {
     font-size: var(--text-page-title);
     font-weight: 500;
     color: var(--color-impact-title);
-    margin-bottom: var(--space-title-subtitle);
+    margin-bottom: var(--space-title-subtitle-less);
 }
 
 .form-header .title span {
@@ -477,7 +471,7 @@
 }
 
 .actions {
-    margin-top: var(--space-4xl);
+    margin-top: var(--space-subtitle-content);
     text-align: center;
 }
 
@@ -506,43 +500,4 @@
     background-color: var(--color-primary-action);
     transform: translateY(-2px);
     box-shadow: none;
-}
-
-@media (max-width: 768px) {
-    .progress-breadcrumb {
-        width: min(100% - 28px, 520px);
-        margin: var(--space-3xl) auto var(--space-4xl);
-        padding: var(--space-sm) 0;
-    }
-
-    .progress-breadcrumb::before {
-        content: "";
-        position: absolute;
-        inset: -2px -8px;
-        z-index: var(--z-behind);
-        border-radius: 999px;
-        background: var(--color-overlay-white-86);
-        backdrop-filter: blur(2px);
-    }
-
-    .progress-step {
-        gap: var(--space-sm);
-    }
-
-    .progress-step:not(:last-child)::after {
-        top: 12px;
-        left: calc(50% + 19px);
-        width: calc(100% - 38px);
-    }
-
-    .progress-marker {
-        width: 26px;
-        height: 26px;
-        font-size: 0.9rem;
-    }
-
-    .progress-label {
-        max-width: 110px;
-        font-size: 0.78rem;
-    }
 }

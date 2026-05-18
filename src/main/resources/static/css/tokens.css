@@ -167,7 +167,7 @@
     --space-metric-label: var(--space-md);
     --space-title-subtitle: var(--space-3xl);
     --space-title-subtitle-less: var(--space-md);
-    --space-subtitle-action: 36px;
+    --space-subtitle-content: 36px;
 
     /* Aliases usados pelo CSS atual */
     --bg: var(--color-bg);

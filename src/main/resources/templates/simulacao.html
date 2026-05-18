@@ -37,31 +37,16 @@
 <body>
 <main class="simulacao-page">
     <header class="topbar">
-        <a href="/" class="brand" style="font-size: 2.2rem;">Eden</a>
+        <a href="/" class="brand brand-logo" aria-label="Eden">
+            <img src="/images/eden-logo.png" alt="Eden">
+        </a>
         <div class="topbar-right">
             <span style="font-size: 0.8rem; color: #666;" th:text="${nomeEmpresa}">Empresa</span>
             <a href="/logout" class="btn-logout-sm">Sair</a>
         </div>
     </header>
 
-    <nav class="progress-breadcrumb" aria-label="Etapas da jornada">
-        <ol class="progress-steps">
-            <li class="progress-step progress-step-done">
-                <a href="/impacto" class="progress-link">
-                    <span class="progress-marker">1</span>
-                    <span class="progress-label">Visualizar impacto</span>
-                </a>
-            </li>
-            <li class="progress-step progress-step-active" aria-current="step">
-                <span class="progress-marker">2</span>
-                <span class="progress-label">Simular digitalização</span>
-            </li>
-            <li class="progress-step progress-step-next" aria-disabled="true">
-                <span class="progress-marker">3</span>
-                <span class="progress-label">Exportar documento</span>
-            </li>
-        </ol>
-    </nav>
+    <th:block th:replace="~{fragments/breadcrumb :: progress(2)}"></th:block>
 
     <section class="sim-content" id="sim-container">
         <div class="sim-header">
