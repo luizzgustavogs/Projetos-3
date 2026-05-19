@@ -157,6 +157,8 @@ Além disso, as correções reduzem a dependência exclusiva do frontend para va
    2. Traduzir impacto ambiental em equivalências
    3. Identificar oportunidades de cross-selling sustentável
 
+**[Acesse aqui o Guia de Execução Completo](./GUIA_DE_EXECUCAO.md)**
+
 **Screencast:** 
   
 <a href="https://youtu.be/O3XMiuHymqk">
@@ -176,7 +178,6 @@ As issues fechadas durante esse periodo da quarta entrega foram:
 <img width="1237" height="782" alt="Screenshot 2026-05-18 at 21 37 48" src="https://github.com/user-attachments/assets/29374d9e-a753-4ecc-8126-ab039d8e6642" />
 
 São relacionadas à melhoria de design system, funcionamento adequado das funcionalidades e melhoria de fluxo.
-
 
 **Foto das Histórias**
 - 1. Comparar impacto entre transações físicas e digitais
