@@ -39,8 +39,8 @@ body.home-body {
 .home-brand {
     display: flex;
     align-items: center;
-    width: 100px;
-    height: 25px;
+    width: 128px;
+    height: 34px;
 }
 
 .home-brand img {

@@ -23,11 +23,11 @@
             th:attr="aria-current=${activeStep == 2 ? 'step' : null}, aria-disabled=${activeStep < 2 ? 'true' : null}">
             <a th:if="${activeStep > 2}" href="/simulacao" class="progress-link">
                 <span class="progress-marker">2</span>
-                <span class="progress-label">Simular digitalização</span>
+                <span class="progress-label">Simular digitaliza&ccedil;&atilde;o</span>
             </a>
             <th:block th:unless="${activeStep > 2}">
                 <span class="progress-marker">2</span>
-                <span class="progress-label">Simular digitalização</span>
+                <span class="progress-label">Simular digitaliza&ccedil;&atilde;o</span>
             </th:block>
         </li>
 

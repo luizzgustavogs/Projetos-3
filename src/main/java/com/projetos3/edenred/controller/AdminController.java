@@ -4,6 +4,8 @@ import com.projetos3.edenred.model.CalculadoraCO2;
 import com.projetos3.edenred.model.DadosEmpresaException;
 import com.projetos3.edenred.model.Empresa;
 import com.projetos3.edenred.model.OportunidadeDTO;
+import com.projetos3.edenred.model.RelatorioDigitalizacao;
+import com.projetos3.edenred.repository.RelatorioDigitalizacaoRepository;
 import com.projetos3.edenred.service.EmpresaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +22,12 @@ import java.util.stream.Collectors;
 public class AdminController {
 
     private final EmpresaService empresaService;
+    private final RelatorioDigitalizacaoRepository relatorioRepository;
 
-    public AdminController(EmpresaService empresaService) {
+    public AdminController(EmpresaService empresaService,
+                           RelatorioDigitalizacaoRepository relatorioRepository) {
         this.empresaService = empresaService;
+        this.relatorioRepository = relatorioRepository;
     }
 
     private boolean isAdmin(HttpSession session) {
@@ -79,6 +84,10 @@ public class AdminController {
         for (int v : histograma) if (v > histogramaMax) histogramaMax = v;
         model.addAttribute("histograma", histograma);
         model.addAttribute("histogramaMax", Math.max(histogramaMax, 1));
+
+        List<RelatorioDigitalizacao> relatoriosRecentes = relatorioRepository.findTop10ByOrderByDataGeracaoDesc();
+        model.addAttribute("relatoriosRecentes", relatoriosRecentes);
+        model.addAttribute("totalRelatorios", relatorioRepository.count());
     }
 
     private OportunidadeDTO montarOportunidade(Empresa e) {

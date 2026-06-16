@@ -66,6 +66,45 @@
             </div>
         </div>
 
+        <section class="relatorios-section">
+            <h2 class="section-block-title">Inteligencia Comercial de Digitalizacao</h2>
+            <p class="section-block-subtitle">
+                Relatorios finais gerados pelos clientes, com a meta de digitalizacao escolhida e impactos estimados para abordagem comercial.
+            </p>
+
+            <div th:if="${#lists.isEmpty(relatoriosRecentes)}" class="empty-msg">
+                Nenhum relatorio final foi gerado por clientes ainda.
+            </div>
+
+            <div th:if="${!#lists.isEmpty(relatoriosRecentes)}" class="relatorios-grid">
+                <article th:each="rel : ${relatoriosRecentes}" class="relatorio-admin-card">
+                    <div class="relatorio-admin-header">
+                        <div>
+                            <span th:text="${rel.dataGeracaoFormatada}">14/06/2026 12:00</span>
+                            <h3 th:text="${rel.empresaNome}">Empresa</h3>
+                        </div>
+                        <strong th:text="${#numbers.formatDecimal(rel.digitalEscolhido, 1, 0) + '%'}">100%</strong>
+                    </div>
+                    <div class="relatorio-admin-meta">
+                        <span>Atual: <strong th:text="${#numbers.formatDecimal(rel.digitalAtual, 1, 0) + '%'}">20%</strong></span>
+                        <span>Avanco: <strong th:text="${#numbers.formatDecimal(rel.ganhoDigital, 1, 0) + ' p.p.'}">80 p.p.</strong></span>
+                        <span>CNPJ: <strong th:text="${rel.empresaCnpj}">00.000.000/0000-00</strong></span>
+                    </div>
+                    <div class="relatorio-admin-impactos">
+                        <span><strong th:text="${rel.cartoesAfetados}">0</strong> cartoes</span>
+                        <span><strong th:text="${rel.co2Cartoes}">0 kg</strong> CO2 cartoes</span>
+                        <span><strong th:text="${rel.residuos}">0 kg</strong> residuos</span>
+                        <span><strong th:text="${rel.arvoresEquivalentes}">0</strong> arvores</span>
+                    </div>
+                    <p class="relatorio-admin-action">
+                        Sugestao: priorizar contato comercial com proposta de aumento para
+                        <strong th:text="${#numbers.formatDecimal(rel.digitalEscolhido, 1, 0) + '%'}">100%</strong>
+                        de digitalizacao.
+                    </p>
+                </article>
+            </div>
+        </section>
+
         <!-- Oportunidades qualificadas -->
         <section class="oportunidades-section">
             <h2 class="section-block-title">Oportunidades Qualificadas</h2>

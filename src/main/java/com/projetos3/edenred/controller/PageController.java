@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.projetos3.edenred.model.Empresa;
+import com.projetos3.edenred.model.RelatorioDigitalizacao;
+import com.projetos3.edenred.repository.RelatorioDigitalizacaoRepository;
 import com.projetos3.edenred.service.ImpactoService;
 import jakarta.servlet.http.HttpSession;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,9 +21,12 @@ import java.util.Map;
 public class PageController {
 
     private final ImpactoService impactoService;
+    private final RelatorioDigitalizacaoRepository relatorioRepository;
 
-    public PageController(ImpactoService impactoService) {
+    public PageController(ImpactoService impactoService,
+                          RelatorioDigitalizacaoRepository relatorioRepository) {
         this.impactoService = impactoService;
+        this.relatorioRepository = relatorioRepository;
     }
 
     @GetMapping("/")
@@ -46,7 +53,7 @@ public class PageController {
         model.addAttribute("numeroBeneficios", empresa.getNumeroBeneficios());
         model.addAttribute("multibeneficio", empresa.isMultibeneficio());
         model.addAttribute("cartoesPorColaborador", empresa.getCartoesPorColaborador());
-        model.addAttribute("totalCartoes", empresa.getTotalCartoesAtuais());
+        model.addAttribute("totalCartoes", calcularCartoesFisicosAtuais(empresa));
         model.addAttribute("digitalAtual", empresa.getPorcentagemDigitalAtual());
 
         return "impacto";
@@ -86,6 +93,48 @@ public class PageController {
         return "simulacao";
     }
 
+    @GetMapping("/relatorio")
+    public String relatorio(
+            @RequestParam(required = false, defaultValue = "100") Integer porcentagemAlvo,
+            HttpSession session,
+            Model model) {
+
+        Empresa empresa = getEmpresaLogada(session);
+        if (empresa == null) {
+            return "redirect:/login";
+        }
+
+        int alvoNormalizado = Math.max(0, Math.min(100, porcentagemAlvo));
+        double digitalAtual = empresa.getPorcentagemDigitalAtual();
+        double ganhoDigital = alvoNormalizado - digitalAtual;
+        boolean ganhoPositivo = ganhoDigital > 0;
+        boolean ganhoNeutro = ganhoDigital == 0;
+        boolean reducaoDigital = ganhoDigital < 0;
+        Map<String, Object> simulacao = impactoService.simularImpacto(empresa, alvoNormalizado);
+        RelatorioDigitalizacao relatorioSalvo = relatorioRepository.save(
+                new RelatorioDigitalizacao(empresa, alvoNormalizado, simulacao));
+
+        int transacoesAnuais = empresa.getColaboradores() * empresa.getTransacoesMensais() * 12;
+        String dataGeracao = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        model.addAttribute("empresa", empresa);
+        model.addAttribute("nomeEmpresa", empresa.getNome());
+        model.addAttribute("digitalAtual", digitalAtual);
+        model.addAttribute("digitalAlvo", alvoNormalizado);
+        model.addAttribute("ganhoDigital", ganhoDigital);
+        model.addAttribute("ganhoPositivo", ganhoPositivo);
+        model.addAttribute("ganhoNeutro", ganhoNeutro);
+        model.addAttribute("reducaoDigital", reducaoDigital);
+        model.addAttribute("simulacao", simulacao);
+        model.addAttribute("cartoesAtuais", calcularCartoesFisicosAtuais(empresa));
+        model.addAttribute("cartoesPorColaborador", empresa.getCartoesPorColaborador());
+        model.addAttribute("transacoesAnuais", transacoesAnuais);
+        model.addAttribute("dataGeracao", dataGeracao);
+        model.addAttribute("relatorioId", relatorioSalvo.getId());
+
+        return "relatorio";
+    }
+
     @PostMapping("/simular-ajax")
     @ResponseBody
     public Map<String, Object> simularAjax(
@@ -107,5 +156,10 @@ public class PageController {
             resposta.put("erro", "Erro no cálculo: " + e.getMessage());
             return resposta;
         }
+    }
+
+    private int calcularCartoesFisicosAtuais(Empresa empresa) {
+        return (int) Math.ceil(empresa.getTotalCartoesAtuais()
+                * (1.0 - empresa.getPorcentagemDigitalAtual() / 100.0));
     }
 }

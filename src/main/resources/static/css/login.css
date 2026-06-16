@@ -27,20 +27,31 @@
     margin-bottom: var(--space-subtitle-content);
 }
 
-.login-page .login-header .brand {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--color-primary-action) !important;
+.login-page .login-header .brand,
+.login-page .login-header .login-brand-logo {
+    display: inline-flex;
+    width: 250px;
+    margin: 0 auto var(--space-title-subtitle-less);
+}
+
+.login-page .login-header .brand img {
     display: block;
-    margin-bottom: var(--space-title-subtitle-less);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .login-page .login-header .subtitle {
     font-size: 0.95rem;
     color: var(--eden-body-text) !important;
     font-weight: 500;
+}
+
+.login-page .login-header .admin-temp-access {
+    margin-top: 6px;
+    color: var(--color-primary-action) !important;
+    font-size: 0.78rem;
+    font-weight: 800;
 }
 
 /* Formulário */

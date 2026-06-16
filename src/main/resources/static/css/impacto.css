@@ -498,3 +498,183 @@
     background-color: var(--color-primary-action);
     transform: translateY(-2px);
 }
+
+@media (min-width: 900px) {
+    .impact-page {
+        min-height: 100vh !important;
+        height: 100vh !important;
+        overflow-y: hidden !important;
+        padding-bottom: 14px;
+    }
+
+    .impact-page .topbar {
+        padding: 14px 48px 8px;
+    }
+
+    .impact-page .progress-breadcrumb {
+        margin: 14px auto 18px;
+    }
+
+    .impact-page .form-section {
+        max-width: 920px;
+        padding: 0 48px 10px;
+    }
+
+    .impact-page .form-header {
+        margin-bottom: 16px;
+    }
+
+    .impact-page .form-header .title {
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+
+    .impact-page .form-header .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .impact-page .empresa-info {
+        margin-bottom: 18px;
+    }
+
+    .impact-page .info-item {
+        padding: 14px 16px;
+        border-radius: 16px;
+    }
+
+    .impact-page .info-label {
+        margin-bottom: 6px;
+    }
+
+    .impact-page .info-value {
+        font-size: 1.12rem;
+    }
+
+    .impact-page .result-card {
+        min-height: 118px;
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .impact-page .result-card .card-value {
+        font-size: 1.62rem;
+    }
+
+    .impact-page .alert-banner {
+        margin-top: 14px;
+        padding: 12px 18px;
+        font-size: 0.84rem;
+    }
+
+    .impact-page .actions {
+        margin-top: 14px;
+    }
+
+    .impact-page .btn-dark {
+        padding: 14px 34px;
+    }
+}
+
+/* Alinhamento compartilhado das telas da jornada */
+.impact-page .topbar {
+    width: min(1360px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 14px 0 8px;
+}
+
+.impact-page .brand-logo {
+    width: 128px;
+}
+
+.impact-page .topbar-right {
+    gap: 12px;
+}
+
+.impact-page .dashboard-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 230px;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid rgba(37, 57, 44, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #69766d;
+}
+
+.impact-page .dashboard-search span {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
+
+.impact-page .dashboard-search span::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    bottom: -3px;
+    width: 7px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: rotate(45deg);
+}
+
+.impact-page .dashboard-search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #24332a;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.impact-page .btn-logout-sm {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    background: #008568;
+    color: #fff;
+    font-weight: 800;
+    text-transform: none;
+}
+
+.impact-page .progress-breadcrumb {
+    margin: 14px auto 18px;
+}
+
+@media (max-width: 980px) {
+    .impact-page .topbar {
+        width: min(100% - 28px, 720px);
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .impact-page .topbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .impact-page .dashboard-search {
+        min-width: 0;
+        flex: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .impact-page .topbar-right {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .impact-page .btn-logout-sm {
+        justify-content: center;
+    }
+}

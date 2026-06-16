@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/impacto.css">
+    <link rel="stylesheet" href="/css/impacto.css?v=2">
 </head>
 <body>
 <main class="impact-page">
@@ -19,7 +19,10 @@
             <img src="/images/eden-logo.png" alt="Eden">
         </a>
         <div class="topbar-right">
-            <span style="font-size: 0.8rem;" th:text="${nomeEmpresa}">Empresa</span>
+            <label class="dashboard-search">
+                <span aria-hidden="true"></span>
+                <input type="search" th:placeholder="${nomeEmpresa}" placeholder="Buscar empresa">
+            </label>
             <a href="/logout" class="btn-logout-sm">SAIR</a>
         </div>
     </header>
@@ -37,7 +40,7 @@
                 <div class="info-item"><p class="info-label">Colaboradores</p><p class="info-value" th:text="${colaboradores}">0</p></div>
                 <div class="info-item"><p class="info-label">Benefícios</p><p class="info-value" th:text="${numeroBeneficios}">0</p></div>
                 <div class="info-item"><p class="info-label">Tipo</p><p class="info-value" th:text="${multibeneficio ? 'Multi' : 'Separado'}">-</p></div>
-                <div class="info-item"><p class="info-label">Total Cartões</p><p class="info-value" th:text="${totalCartoes}">0</p></div>
+                <div class="info-item"><p class="info-label">Cart&otilde;es f&iacute;sicos</p><p class="info-value" th:text="${totalCartoes}">0</p></div>
             </div>
         </div>
 
@@ -50,7 +53,7 @@
         <div id="alert-banner" class="alert-banner" role="status"></div>
 
         <div class="actions">
-            <a href="/simulacao" class="btn btn-dark">SIMULAR MELHORIAS</a>
+            <a href="/simulacao" class="btn btn-dark">SIMULAR IMPACTOS</a>
         </div>
     </section>
 
